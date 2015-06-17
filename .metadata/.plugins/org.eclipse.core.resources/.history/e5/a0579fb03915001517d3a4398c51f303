@@ -1,0 +1,12 @@
+package cctv.zoneminder.client;
+
+import javax.swing.JFrame;
+
+public class VideoPersonalFrame extends JFrame{
+
+	
+	public VideoPersonalFrame() {
+		// TODO Auto-generated constructor stub
+	}
+	
+}

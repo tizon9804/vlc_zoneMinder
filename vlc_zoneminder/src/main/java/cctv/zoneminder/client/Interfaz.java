@@ -1,0 +1,110 @@
+package cctv.zoneminder.client;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.TextField;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+
+import com.sun.jna.platform.unix.X11.Window;
+
+public class Interfaz extends JFrame {
+
+
+
+	private Main main;
+	private PanelReproductor reproductor;
+	private ArrayList<Camara> camaras;
+
+	public Interfaz(Main main) {
+		this.main=main;
+		setLayout(new BorderLayout());
+		setBackground(Color.WHITE);
+		setSize(800,800);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
+		//inicializacion de paneles				
+	    reproductor= new PanelReproductor();		
+		// Registro de paneles				
+		add(reproductor,BorderLayout.CENTER);
+		camaras = new ArrayList<Camara>();
+		
+		addWindowListener(new WindowListener() {
+		
+			
+			public void windowClosing(WindowEvent e) {
+				onDispose();
+				
+			}
+
+			public void windowActivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			public void windowClosed(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			public void windowDeactivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			public void windowDeiconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			public void windowIconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			public void windowOpened(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		
+		});
+		
+	}
+	
+	public void reproducir(ArrayList<Camara> camaras){
+		try{
+		reproductor.run(camaras);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void onDispose(){		
+		super.dispose();	
+		reproductor.closeAll();	
+		System.exit(0);
+	}
+
+
+
+	public void agregarCamaras(String ip, String rango) {
+		setCamaras(main.crearCamaras(this,ip, rango));
+		
+	}
+
+	public ArrayList<Camara> getCamaras() {
+		return camaras;
+	}
+
+	public void setCamaras(ArrayList<Camara> camaras) {
+		this.camaras = camaras;
+	}
+
+
+	
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;cctv.zoneminder&apos;" deleteContents="false" description="Delete resource &apos;cctv.zoneminder&apos;" element1="/cctv.zoneminder" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1434556719163"/>
+</session>

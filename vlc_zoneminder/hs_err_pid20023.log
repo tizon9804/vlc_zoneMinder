@@ -1,0 +1,1250 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fac597b5592, pid=20023, tid=140374238045952
+#
+# JRE version: OpenJDK Runtime Environment (7.0_79-b14) (build 1.7.0_79-b14)
+# Java VM: OpenJDK 64-Bit Server VM (24.79-b02 mixed mode linux-amd64 compressed oops)
+# Derivative: IcedTea 2.5.5
+# Distribution: Ubuntu 14.04 LTS, package 7u79-2.5.5-0ubuntu0.14.04.2
+# Problematic frame:
+# C  [libdbus-1.so.3+0x13592]
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please include
+# instructions on how to reproduce the bug and visit:
+#   http://icedtea.classpath.org/bugzilla
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x0000000000000005
+
+Registers:
+RAX=0x0000000000000001, RBX=0x0000000000000000, RCX=0x000000000000006c, RDX=0x00007fac99ae7373
+RSP=0x00007fab6c9810e0, RBP=0x00007fac740f25e0, RSI=0x00007fab6c981320, RDI=0x00007fac60136da8
+R8 =0x000000000000008f, R9 =0x0000000000000003, R10=0x00007fab6c9811d0, R11=0x00007fac99b17a30
+R12=0x00007fab6c981320, R13=0x00007fab6c981118, R14=0x0000000000000000, R15=0x00007fab6c9811f0
+RIP=0x00007fac597b5592, EFLAGS=0x0000000000010202, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fab6c9810e0)
+0x00007fab6c9810e0:   00007fab6c9811d0 00007fab6c981320
+0x00007fab6c9810f0:   00007fab6c981118 00007fab6c981120
+0x00007fab6c981100:   0000000000000008 00007fac597b6b4b
+0x00007fab6c981110:   00007fac600a9b30 00007fac740f25e0
+0x00007fab6c981120:   00007fab6c9b006c 00007fac599e5ad0
+0x00007fab6c981130:   00007fab0000000b 00007fab6c9811d0
+0x00007fab6c981140:   00007fab00000008 00007fab6c9811d0
+0x00007fab6c981150:   000000000000006c 00007fac599e5ad0
+0x00007fab6c981160:   00007fab0000000b 00007fac60136da8
+0x00007fab6c981170:   0000006c0000008f 00007fac599e5d00
+0x00007fab6c981180:   000000000000007c 00007fac597b64b6
+0x00007fab6c981190:   00007fab6c981320 0000000000000000
+0x00007fab6c9811a0:   00007fab6c9813a8 00007fab6c9812a0
+0x00007fab6c9811b0:   00007fab6c9811d0 00007fac597b6c90
+0x00007fab6c9811c0:   00007fab6c981260 00007fab6c9811f0
+0x00007fab6c9811d0:   00007fac6003bfb0 0000001000000008
+0x00007fab6c9811e0:   00007fab6c981200 08007fac00000004
+0x00007fab6c9811f0:   000000000003006c 00007fac60136da8
+0x00007fab6c981200:   00007fac0000008b 00007fab6c9811d0
+0x00007fab6c981210:   00007fab00000008 00007fac599e5c80
+0x00007fab6c981220:   00007fab6c9812e0 00007fac60136da8
+0x00007fab6c981230:   00007fab6c9812e0 00007fab6c9813a8
+0x00007fab6c981240:   00007fab6c9812a0 00007fab6c981320
+0x00007fab6c981250:   00007fac601d9a68 00007fac597b4628
+0x00007fab6c981260:   000000000000006c 00007fac599e5ad0
+0x00007fab6c981270:   00007fab00000007 00007fac60136da8
+0x00007fab6c981280:   0000000000000088 00007fac599e5b80
+0x00007fab6c981290:   00007fab00000010 00007fac60136df0
+0x00007fab6c9812a0:   000000000000006c 00007fac599e5ad0
+0x00007fab6c9812b0:   00007fab00000006 00007fac60136da8
+0x00007fab6c9812c0:   0000006c0000000c 00007fac599e5d00
+0x00007fab6c9812d0:   000000000000007c 0000001b00000080 
+
+Instructions: (pc=0x00007fac597b5592)
+0x00007fac597b5572:   dd 48 8b 5d 08 49 3b 5d 00 49 0f 44 de 4d 85 e4
+0x00007fac597b5582:   74 18 48 8b 45 10 41 0f b6 0c 24 49 8b 7c 24 18
+0x00007fac597b5592:   8b 50 04 8b 30 e8 b4 2c 01 00 48 8b 7d 10 e8 eb
+0x00007fac597b55a2:   39 01 00 48 89 ef e8 33 25 01 00 48 85 db 75 be 
+
+Register to memory mapping:
+
+RAX=0x0000000000000001 is an unknown value
+RBX=0x0000000000000000 is an unknown value
+RCX=0x000000000000006c is an unknown value
+RDX=0x00007fac99ae7373: <offset 0x157373> in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007fac99990000
+RSP=0x00007fab6c9810e0 is an unknown value
+RBP=0x00007fac740f25e0 is an unknown value
+RSI=0x00007fab6c981320 is an unknown value
+RDI=0x00007fac60136da8 is an unknown value
+R8 =0x000000000000008f is an unknown value
+R9 =0x0000000000000003 is an unknown value
+R10=0x00007fab6c9811d0 is an unknown value
+R11=0x00007fac99b17a30: <offset 0x187a30> in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007fac99990000
+R12=0x00007fab6c981320 is an unknown value
+R13=0x00007fab6c981118 is an unknown value
+R14=0x0000000000000000 is an unknown value
+R15=0x00007fab6c9811f0 is an unknown value
+
+
+Stack: [0x00007fab6c882000,0x00007fab6c983000],  sp=0x00007fab6c9810e0,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libdbus-1.so.3+0x13592]
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 125952K, used 48273K [0x00000000ec300000, 0x00000000f8980000, 0x0000000100000000)
+  eden space 122368K, 37% used [0x00000000ec300000,0x00000000eefc44d8,0x00000000f3a80000)
+  from space 3584K, 67% used [0x00000000f3a80000,0x00000000f3ce0000,0x00000000f3e00000)
+  to   space 3584K, 0% used [0x00000000f8600000,0x00000000f8600000,0x00000000f8980000)
+ ParOldGen       total 40448K, used 2232K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 5% used [0x00000000c4a00000,0x00000000c4c2e230,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11951K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000bafabf98,0x00000000bb900000)
+
+Card table byte_map: [0x00007fac96112000,0x00007fac96341000] byte_map_base: 0x00007fac95b40000
+
+Polling page: 0x00007fac9a182000
+
+Code Cache  [0x00007fac8d000000, 0x00007fac8d270000, 0x00007fac90000000)
+ total_blobs=737 nmethods=311 adapters=379 free_code_cache=48032Kb largest_free_block=49130752
+
+Compilation events (10 events):
+Event: 8,303 Thread 0x00007fac900ac800 nmethod 330 0x00007fac8d0c1d90 code [0x00007fac8d0c1f00, 0x00007fac8d0c20a8]
+Event: 8,304 Thread 0x00007fac900ac800  331             sun.reflect.UnsafeLongFieldAccessorImpl::getLong (17 bytes)
+Event: 8,305 Thread 0x00007fac900ac800 nmethod 331 0x00007fac8d0b4e90 code [0x00007fac8d0b4fe0, 0x00007fac8d0b5108]
+Event: 8,372 Thread 0x00007fac900af800 nmethod 327 0x00007fac8d121450 code [0x00007fac8d121820, 0x00007fac8d123738]
+Event: 8,416 Thread 0x00007fac900ac800  332             com.sun.jna.Pointer::<init> (10 bytes)
+Event: 8,418 Thread 0x00007fac900ac800 nmethod 332 0x00007fac8d0ac590 code [0x00007fac8d0ac6c0, 0x00007fac8d0ac738]
+Event: 8,649 Thread 0x00007fac900af800  333             java.lang.Integer::intValue (5 bytes)
+Event: 8,649 Thread 0x00007fac900af800 nmethod 333 0x00007fac8d0a1690 code [0x00007fac8d0a17c0, 0x00007fac8d0a1818]
+Event: 9,072 Thread 0x00007fac900ac800  334             java.util.concurrent.ThreadPoolExecutor::workerCountOf (5 bytes)
+Event: 9,072 Thread 0x00007fac900ac800 nmethod 334 0x00007fac8d095710 code [0x00007fac8d095840, 0x00007fac8d095878]
+
+GC Heap History (10 events):
+Event: 4,506 GC heap before
+{Heap before GC invocations=5 (full 0):
+ PSYoungGen      total 33280K, used 33122K [0x00000000ec300000, 0x00000000ee600000, 0x0000000100000000)
+  eden space 30720K, 100% used [0x00000000ec300000,0x00000000ee100000,0x00000000ee100000)
+  from space 2560K, 93% used [0x00000000ee380000,0x00000000ee5d8830,0x00000000ee600000)
+  to   space 2560K, 0% used [0x00000000ee100000,0x00000000ee100000,0x00000000ee380000)
+ ParOldGen       total 40448K, used 24K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 0% used [0x00000000c4a00000,0x00000000c4a06000,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11839K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000baf8fd58,0x00000000bb900000)
+Event: 4,539 GC heap after
+Heap after GC invocations=5 (full 0):
+ PSYoungGen      total 33280K, used 2546K [0x00000000ec300000, 0x00000000f0500000, 0x0000000100000000)
+  eden space 30720K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000ee100000)
+  from space 2560K, 99% used [0x00000000ee100000,0x00000000ee37c820,0x00000000ee380000)
+  to   space 3072K, 0% used [0x00000000f0200000,0x00000000f0200000,0x00000000f0500000)
+ ParOldGen       total 40448K, used 152K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 0% used [0x00000000c4a00000,0x00000000c4a26000,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11839K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000baf8fd58,0x00000000bb900000)
+}
+Event: 5,044 GC heap before
+{Heap before GC invocations=6 (full 0):
+ PSYoungGen      total 33280K, used 33266K [0x00000000ec300000, 0x00000000f0500000, 0x0000000100000000)
+  eden space 30720K, 100% used [0x00000000ec300000,0x00000000ee100000,0x00000000ee100000)
+  from space 2560K, 99% used [0x00000000ee100000,0x00000000ee37c820,0x00000000ee380000)
+  to   space 3072K, 0% used [0x00000000f0200000,0x00000000f0200000,0x00000000f0500000)
+ ParOldGen       total 40448K, used 152K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 0% used [0x00000000c4a00000,0x00000000c4a26000,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11881K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000baf9a648,0x00000000bb900000)
+Event: 5,113 GC heap after
+Heap after GC invocations=6 (full 0):
+ PSYoungGen      total 64512K, used 2882K [0x00000000ec300000, 0x00000000f0500000, 0x0000000100000000)
+  eden space 61440K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000eff00000)
+  from space 3072K, 93% used [0x00000000f0200000,0x00000000f04d0830,0x00000000f0500000)
+  to   space 3072K, 0% used [0x00000000eff00000,0x00000000eff00000,0x00000000f0200000)
+ ParOldGen       total 40448K, used 160K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 0% used [0x00000000c4a00000,0x00000000c4a28000,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11881K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000baf9a648,0x00000000bb900000)
+}
+Event: 5,964 GC heap before
+{Heap before GC invocations=7 (full 0):
+ PSYoungGen      total 64512K, used 64322K [0x00000000ec300000, 0x00000000f0500000, 0x0000000100000000)
+  eden space 61440K, 100% used [0x00000000ec300000,0x00000000eff00000,0x00000000eff00000)
+  from space 3072K, 93% used [0x00000000f0200000,0x00000000f04d0830,0x00000000f0500000)
+  to   space 3072K, 0% used [0x00000000eff00000,0x00000000eff00000,0x00000000f0200000)
+ ParOldGen       total 40448K, used 160K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 0% used [0x00000000c4a00000,0x00000000c4a28000,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11889K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000baf9c780,0x00000000bb900000)
+Event: 6,213 GC heap after
+Heap after GC invocations=7 (full 0):
+ PSYoungGen      total 64512K, used 1376K [0x00000000ec300000, 0x00000000f4100000, 0x0000000100000000)
+  eden space 61440K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000eff00000)
+  from space 3072K, 44% used [0x00000000eff00000,0x00000000f0058000,0x00000000f0200000)
+  to   space 3072K, 0% used [0x00000000f3e00000,0x00000000f3e00000,0x00000000f4100000)
+ ParOldGen       total 40448K, used 2144K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 5% used [0x00000000c4a00000,0x00000000c4c18230,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11889K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000baf9c780,0x00000000bb900000)
+}
+Event: 6,774 GC heap before
+{Heap before GC invocations=8 (full 0):
+ PSYoungGen      total 64512K, used 62816K [0x00000000ec300000, 0x00000000f4100000, 0x0000000100000000)
+  eden space 61440K, 100% used [0x00000000ec300000,0x00000000eff00000,0x00000000eff00000)
+  from space 3072K, 44% used [0x00000000eff00000,0x00000000f0058000,0x00000000f0200000)
+  to   space 3072K, 0% used [0x00000000f3e00000,0x00000000f3e00000,0x00000000f4100000)
+ ParOldGen       total 40448K, used 2144K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 5% used [0x00000000c4a00000,0x00000000c4c18230,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11902K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000baf9f820,0x00000000bb900000)
+Event: 6,799 GC heap after
+Heap after GC invocations=8 (full 0):
+ PSYoungGen      total 125440K, used 1440K [0x00000000ec300000, 0x00000000f4200000, 0x0000000100000000)
+  eden space 122368K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000f3a80000)
+  from space 3072K, 46% used [0x00000000f3e00000,0x00000000f3f68000,0x00000000f4100000)
+  to   space 3584K, 0% used [0x00000000f3a80000,0x00000000f3a80000,0x00000000f3e00000)
+ ParOldGen       total 40448K, used 2184K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 5% used [0x00000000c4a00000,0x00000000c4c22230,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11902K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000baf9f820,0x00000000bb900000)
+}
+Event: 9,095 GC heap before
+{Heap before GC invocations=9 (full 0):
+ PSYoungGen      total 125440K, used 123808K [0x00000000ec300000, 0x00000000f4200000, 0x0000000100000000)
+  eden space 122368K, 100% used [0x00000000ec300000,0x00000000f3a80000,0x00000000f3a80000)
+  from space 3072K, 46% used [0x00000000f3e00000,0x00000000f3f68000,0x00000000f4100000)
+  to   space 3584K, 0% used [0x00000000f3a80000,0x00000000f3a80000,0x00000000f3e00000)
+ ParOldGen       total 40448K, used 2184K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 5% used [0x00000000c4a00000,0x00000000c4c22230,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11933K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000bafa7738,0x00000000bb900000)
+Event: 9,483 GC heap after
+Heap after GC invocations=9 (full 0):
+ PSYoungGen      total 125952K, used 2432K [0x00000000ec300000, 0x00000000f8980000, 0x0000000100000000)
+  eden space 122368K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000f3a80000)
+  from space 3584K, 67% used [0x00000000f3a80000,0x00000000f3ce0000,0x00000000f3e00000)
+  to   space 3584K, 0% used [0x00000000f8600000,0x00000000f8600000,0x00000000f8980000)
+ ParOldGen       total 40448K, used 2232K [0x00000000c4a00000, 0x00000000c7180000, 0x00000000ec300000)
+  object space 40448K, 5% used [0x00000000c4a00000,0x00000000c4c2e230,0x00000000c7180000)
+ PSPermGen       total 21504K, used 11933K [0x00000000ba400000, 0x00000000bb900000, 0x00000000c4a00000)
+  object space 21504K, 55% used [0x00000000ba400000,0x00000000bafa7738,0x00000000bb900000)
+}
+
+Deoptimization events (10 events):
+Event: 4,690 Thread 0x00007fac2c001000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fac8d0f8c00 method=com.sun.jna.NativeMappedConverter.getInstance(Ljava/lang/Class;)Lcom/sun/jna/NativeMappedConverter; @ 15
+Event: 4,690 Thread 0x00007fac2c001000 Uncommon trap: reason=unreached action=reinterpret pc=0x00007fac8d0cd8e8 method=java.lang.Class.newInstance()Ljava/lang/Object; @ 19
+Event: 4,691 Thread 0x00007fac2c001000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007fac8d0d7324 method=java.util.HashMap.<init>(IF)V @ 115
+Event: 4,766 Thread 0x00007fac906cf800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fac8d103afc method=com.sun.jna.Function.invoke(Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object; @ 152
+Event: 4,795 Thread 0x00007fac2c001000 Uncommon trap: reason=unreached action=reinterpret pc=0x00007fac8d0cba58 method=sun.reflect.UnsafeObjectFieldAccessorImpl.set(Ljava/lang/Object;Ljava/lang/Object;)V @ 18
+Event: 4,798 Thread 0x00007fac2c001000 Uncommon trap: reason=unreached action=reinterpret pc=0x00007fac8d0c8f60 method=sun.reflect.UnsafeObjectFieldAccessorImpl.set(Ljava/lang/Object;Ljava/lang/Object;)V @ 18
+Event: 6,221 Thread 0x00007fac9007e000 Uncommon trap: reason=unreached action=reinterpret pc=0x00007fac8d0f82e0 method=java.lang.ref.Reference$ReferenceHandler.run()V @ 96
+Event: 6,609 Thread 0x00007fac24018000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fac8d119c6c method=com.sun.jna.Pointer.getValue(JLjava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object; @ 25
+Event: 6,645 Thread 0x00007fac90648800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fac8d1178cc method=com.sun.jna.Structure.readField(Lcom/sun/jna/Structure$StructField;)Ljava/lang/Object; @ 51
+Event: 8,375 Thread 0x00007fac101bb800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fac8d1233ac method=com.sun.jna.Structure.readField(Lcom/sun/jna/Structure$StructField;)Ljava/lang/Object; @ 79
+
+Internal exceptions (10 events):
+Event: 4,489 Thread 0x00007fac2c001000 Threw 0x00000000edf56ad0 at /build/buildd/openjdk-7-7u79-2.5.5/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1284
+Event: 4,495 Thread 0x00007fac2c001000 Threw 0x00000000edf5cf68 at /build/buildd/openjdk-7-7u79-2.5.5/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1284
+Event: 4,690 Thread 0x00007fac2c001000 Threw 0x00000000ec522aa0 at /build/buildd/openjdk-7-7u79-2.5.5/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1284
+Event: 4,795 Thread 0x00007fac2c001000 Implicit null exception at 0x00007fac8d0cb741 to 0x00007fac8d0cba29
+Event: 4,798 Thread 0x00007fac2c001000 Implicit null exception at 0x00007fac8d0c8cc6 to 0x00007fac8d0c8f45
+Event: 5,287 Thread 0x00007fac30017800 Threw 0x00000000ecd9b850 at /build/buildd/openjdk-7-7u79-2.5.5/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1284
+Event: 5,320 Thread 0x00007fac30017800 Threw 0x00000000ed3d33c8 at /build/buildd/openjdk-7-7u79-2.5.5/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1284
+Event: 6,645 Thread 0x00007fac90648800 Implicit null exception at 0x00007fac8d116e75 to 0x00007fac8d1178a9
+Event: 8,375 Thread 0x00007fac101bb800 Implicit null exception at 0x00007fac8d121cf7 to 0x00007fac8d123391
+Event: 9,679 Thread 0x00007fac7c05a000 Threw 0x00000000edce22e0 at /build/buildd/openjdk-7-7u79-2.5.5/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1284
+
+Events (10 events):
+Event: 9,822 Thread 0x00007fac30136000 Thread added: 0x00007fac30136000
+Event: 9,822 Thread 0x00007fac30136000 Thread exited: 0x00007fac30136000
+Event: 9,825 Thread 0x00007fac2806e800 Thread added: 0x00007fac2806e800
+Event: 9,825 Thread 0x00007fac2806e800 Thread exited: 0x00007fac2806e800
+Event: 9,825 Thread 0x00007fac2806e800 Thread added: 0x00007fac2806e800
+Event: 9,826 Thread 0x00007fac2806e800 Thread exited: 0x00007fac2806e800
+Event: 9,857 Thread 0x00007fac6c0ed000 Thread added: 0x00007fac6c0ed000
+Event: 9,859 Thread 0x00007fac6c0ed000 Thread exited: 0x00007fac6c0ed000
+Event: 9,875 Thread 0x00007fac907f5000 Thread added: 0x00007fac907f5000
+Event: 9,876 Thread 0x00007fac907f5000 Thread exited: 0x00007fac907f5000
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 3946180                            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+00600000-00601000 r--p 00000000 08:01 3946180                            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+00601000-00602000 rw-p 00001000 08:01 3946180                            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+025c9000-02790000 rw-p 00000000 00:00 0                                  [heap]
+ba400000-bb900000 rw-p 00000000 00:00 0 
+bb900000-c4a00000 rw-p 00000000 00:00 0 
+c4a00000-c7180000 rw-p 00000000 00:00 0 
+c7180000-ec300000 rw-p 00000000 00:00 0 
+ec300000-f8980000 rw-p 00000000 00:00 0 
+f8980000-100000000 rw-p 00000000 00:00 0 
+7fab61827000-7fab61844000 rw-s 00000000 00:04 40796565                   /SYSV00000000 (deleted)
+7fab61844000-7fab61861000 rw-s 00000000 00:04 40763796                   /SYSV00000000 (deleted)
+7fab61861000-7fab6187e000 rw-s 00000000 00:04 40731027                   /SYSV00000000 (deleted)
+7fab6187e000-7fab6189b000 rw-s 00000000 00:04 40698258                   /SYSV00000000 (deleted)
+7fab6189b000-7fab618b8000 rw-s 00000000 00:04 40665489                   /SYSV00000000 (deleted)
+7fab618b8000-7fab618d5000 rw-s 00000000 00:04 40632720                   /SYSV00000000 (deleted)
+7fab618d5000-7fab618f2000 rw-s 00000000 00:04 40599951                   /SYSV00000000 (deleted)
+7fab618f2000-7fab619a8000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab619a8000-7fab619c5000 rw-s 00000000 00:04 40370568                   /SYSV00000000 (deleted)
+7fab619c5000-7fab619e2000 rw-s 00000000 00:04 40337799                   /SYSV00000000 (deleted)
+7fab619e2000-7fab619ff000 rw-s 00000000 00:04 40305030                   /SYSV00000000 (deleted)
+7fab619ff000-7fab61a1c000 rw-s 00000000 00:04 40272261                   /SYSV00000000 (deleted)
+7fab61a1c000-7fab61a39000 rw-s 00000000 00:04 40239492                   /SYSV00000000 (deleted)
+7fab61a39000-7fab61a56000 rw-s 00000000 00:04 40206723                   /SYSV00000000 (deleted)
+7fab61a56000-7fab61a73000 rw-s 00000000 00:04 40173954                   /SYSV00000000 (deleted)
+7fab61a73000-7fab61a90000 rw-s 00000000 00:04 40141185                   /SYSV00000000 (deleted)
+7fab61a90000-7fab61aad000 rw-s 00000000 00:04 40108416                   /SYSV00000000 (deleted)
+7fab61aad000-7fab61aca000 rw-s 00000000 00:04 40075647                   /SYSV00000000 (deleted)
+7fab61aca000-7fab61ae7000 rw-s 00000000 00:04 40042878                   /SYSV00000000 (deleted)
+7fab61ae7000-7fab61b04000 rw-s 00000000 00:04 40010109                   /SYSV00000000 (deleted)
+7fab61b04000-7fab61b21000 rw-s 00000000 00:04 39977340                   /SYSV00000000 (deleted)
+7fab61b21000-7fab61b3e000 rw-s 00000000 00:04 39944571                   /SYSV00000000 (deleted)
+7fab61b3e000-7fab61b5b000 rw-s 00000000 00:04 39911802                   /SYSV00000000 (deleted)
+7fab61b5b000-7fab61b78000 rw-s 00000000 00:04 39879033                   /SYSV00000000 (deleted)
+7fab61b78000-7fab61b95000 rw-s 00000000 00:04 39813495                   /SYSV00000000 (deleted)
+7fab61b95000-7fab61bb2000 rw-s 00000000 00:04 39780726                   /SYSV00000000 (deleted)
+7fab61bb2000-7fab61bcf000 rw-s 00000000 00:04 39747957                   /SYSV00000000 (deleted)
+7fab61bcf000-7fab61bec000 rw-s 00000000 00:04 39715188                   /SYSV00000000 (deleted)
+7fab61bec000-7fab61c09000 rw-s 00000000 00:04 39682419                   /SYSV00000000 (deleted)
+7fab61c09000-7fab61c14000 r-xp 00000000 08:01 3937533                    /usr/lib/x86_64-linux-gnu/libdrm.so.2.4.0
+7fab61c14000-7fab61e13000 ---p 0000b000 08:01 3937533                    /usr/lib/x86_64-linux-gnu/libdrm.so.2.4.0
+7fab61e13000-7fab61e14000 r--p 0000a000 08:01 3937533                    /usr/lib/x86_64-linux-gnu/libdrm.so.2.4.0
+7fab61e14000-7fab61e15000 rw-p 0000b000 08:01 3937533                    /usr/lib/x86_64-linux-gnu/libdrm.so.2.4.0
+7fab61e15000-7fab61e19000 r-xp 00000000 08:01 3940470                    /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+7fab61e19000-7fab62019000 ---p 00004000 08:01 3940470                    /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+7fab62019000-7fab6201a000 r--p 00004000 08:01 3940470                    /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+7fab6201a000-7fab6201b000 rw-p 00005000 08:01 3940470                    /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+7fab6201b000-7fab6201c000 r-xp 00000000 08:01 3941499                    /usr/lib/x86_64-linux-gnu/libxshmfence.so.1.0.0
+7fab6201c000-7fab6221b000 ---p 00001000 08:01 3941499                    /usr/lib/x86_64-linux-gnu/libxshmfence.so.1.0.0
+7fab6221b000-7fab6221c000 r--p 00000000 08:01 3941499                    /usr/lib/x86_64-linux-gnu/libxshmfence.so.1.0.0
+7fab6221c000-7fab6221d000 rw-p 00001000 08:01 3941499                    /usr/lib/x86_64-linux-gnu/libxshmfence.so.1.0.0
+7fab6221d000-7fab62222000 r-xp 00000000 08:01 3941481                    /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1.0.0
+7fab62222000-7fab62421000 ---p 00005000 08:01 3941481                    /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1.0.0
+7fab62421000-7fab62422000 r--p 00004000 08:01 3941481                    /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1.0.0
+7fab62422000-7fab62423000 rw-p 00005000 08:01 3941481                    /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1.0.0
+7fab62423000-7fab62425000 r-xp 00000000 08:01 3941469                    /usr/lib/x86_64-linux-gnu/libxcb-present.so.0.0.0
+7fab62425000-7fab62624000 ---p 00002000 08:01 3941469                    /usr/lib/x86_64-linux-gnu/libxcb-present.so.0.0.0
+7fab62624000-7fab62625000 r--p 00001000 08:01 3941469                    /usr/lib/x86_64-linux-gnu/libxcb-present.so.0.0.0
+7fab62625000-7fab62626000 rw-p 00002000 08:01 3941469                    /usr/lib/x86_64-linux-gnu/libxcb-present.so.0.0.0
+7fab62626000-7fab62643000 rw-s 00000000 00:04 39649650                   /SYSV00000000 (deleted)
+7fab62643000-7fab62660000 rw-s 00000000 00:04 39616881                   /SYSV00000000 (deleted)
+7fab62660000-7fab62662000 r-xp 00000000 08:01 3941459                    /usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0.0.0
+7fab62662000-7fab62861000 ---p 00002000 08:01 3941459                    /usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0.0.0
+7fab62861000-7fab62862000 r--p 00001000 08:01 3941459                    /usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0.0.0
+7fab62862000-7fab62863000 rw-p 00002000 08:01 3941459                    /usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0.0.0
+7fab62863000-7fab62866000 r-xp 00000000 08:01 3941457                    /usr/lib/x86_64-linux-gnu/libxcb-dri2.so.0.0.0
+7fab62866000-7fab62a66000 ---p 00003000 08:01 3941457                    /usr/lib/x86_64-linux-gnu/libxcb-dri2.so.0.0.0
+7fab62a66000-7fab62a67000 r--p 00003000 08:01 3941457                    /usr/lib/x86_64-linux-gnu/libxcb-dri2.so.0.0.0
+7fab62a67000-7fab62a68000 rw-p 00004000 08:01 3941457                    /usr/lib/x86_64-linux-gnu/libxcb-dri2.so.0.0.0
+7fab62a68000-7fab62a7d000 r-xp 00000000 08:01 3941461                    /usr/lib/x86_64-linux-gnu/libxcb-glx.so.0.0.0
+7fab62a7d000-7fab62c7c000 ---p 00015000 08:01 3941461                    /usr/lib/x86_64-linux-gnu/libxcb-glx.so.0.0.0
+7fab62c7c000-7fab62c7e000 r--p 00014000 08:01 3941461                    /usr/lib/x86_64-linux-gnu/libxcb-glx.so.0.0.0
+7fab62c7e000-7fab62c7f000 rw-p 00016000 08:01 3941461                    /usr/lib/x86_64-linux-gnu/libxcb-glx.so.0.0.0
+7fab62c7f000-7fab62c9c000 rw-s 00000000 00:04 39584112                   /SYSV00000000 (deleted)
+7fab62c9c000-7fab62cb9000 rw-s 00000000 00:04 39551343                   /SYSV00000000 (deleted)
+7fab62cb9000-7fab62cba000 r-xp 00000000 08:01 3940413                    /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+7fab62cba000-7fab62eb9000 ---p 00001000 08:01 3940413                    /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+7fab62eb9000-7fab62eba000 r--p 00000000 08:01 3940413                    /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+7fab62eba000-7fab62ebb000 rw-p 00001000 08:01 3940413                    /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+7fab62ebb000-7fab62ebd000 r-xp 00000000 08:01 3940428                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fab62ebd000-7fab630bc000 ---p 00002000 08:01 3940428                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fab630bc000-7fab630bd000 r--p 00001000 08:01 3940428                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fab630bd000-7fab630be000 rw-p 00002000 08:01 3940428                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fab630be000-7fab630db000 rw-s 00000000 00:04 39518574                   /SYSV00000000 (deleted)
+7fab630db000-7fab630ff000 r-xp 00000000 08:01 3935840                    /usr/lib/x86_64-linux-gnu/libglapi.so.0.0.0
+7fab630ff000-7fab632ff000 ---p 00024000 08:01 3935840                    /usr/lib/x86_64-linux-gnu/libglapi.so.0.0.0
+7fab632ff000-7fab63302000 r--p 00024000 08:01 3935840                    /usr/lib/x86_64-linux-gnu/libglapi.so.0.0.0
+7fab63302000-7fab63303000 rw-p 00027000 08:01 3935840                    /usr/lib/x86_64-linux-gnu/libglapi.so.0.0.0
+7fab63303000-7fab63304000 rw-p 00000000 00:00 0 
+7fab63304000-7fab63390000 r-xp 00000000 08:01 4458286                    /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0
+7fab63390000-7fab6358f000 ---p 0008c000 08:01 4458286                    /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0
+7fab6358f000-7fab63592000 r--p 0008b000 08:01 4458286                    /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0
+7fab63592000-7fab63593000 rw-p 0008e000 08:01 4458286                    /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0
+7fab63593000-7fab63594000 rw-p 00000000 00:00 0 
+7fab63594000-7fab6359d000 r-xp 00000000 08:01 4202780                    /usr/lib/vlc/plugins/video_output/libxcb_glx_plugin.so
+7fab6359d000-7fab6379c000 ---p 00009000 08:01 4202780                    /usr/lib/vlc/plugins/video_output/libxcb_glx_plugin.so
+7fab6379c000-7fab6379d000 r--p 00008000 08:01 4202780                    /usr/lib/vlc/plugins/video_output/libxcb_glx_plugin.so
+7fab6379d000-7fab6379e000 rw-p 00009000 08:01 4202780                    /usr/lib/vlc/plugins/video_output/libxcb_glx_plugin.so
+7fab6379e000-7fab63854000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab63854000-7fab6390a000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6390a000-7fab63927000 rw-s 00000000 00:04 39321960                   /SYSV00000000 (deleted)
+7fab63927000-7fab63944000 rw-s 00000000 00:04 39289191                   /SYSV00000000 (deleted)
+7fab63944000-7fab63961000 rw-s 00000000 00:04 39256422                   /SYSV00000000 (deleted)
+7fab63961000-7fab6397e000 rw-s 00000000 00:04 39223653                   /SYSV00000000 (deleted)
+7fab6397e000-7fab6399b000 rw-s 00000000 00:04 39190884                   /SYSV00000000 (deleted)
+7fab6399b000-7fab639b8000 rw-s 00000000 00:04 39158115                   /SYSV00000000 (deleted)
+7fab639b8000-7fab639d5000 rw-s 00000000 00:04 39125346                   /SYSV00000000 (deleted)
+7fab639d5000-7fab639f2000 rw-s 00000000 00:04 39092577                   /SYSV00000000 (deleted)
+7fab639f2000-7fab63a0f000 rw-s 00000000 00:04 39059808                   /SYSV00000000 (deleted)
+7fab63a0f000-7fab63a2c000 rw-s 00000000 00:04 39027039                   /SYSV00000000 (deleted)
+7fab63a2c000-7fab63a49000 rw-s 00000000 00:04 38994270                   /SYSV00000000 (deleted)
+7fab63a49000-7fab63a66000 rw-s 00000000 00:04 38961501                   /SYSV00000000 (deleted)
+7fab63a66000-7fab63a83000 rw-s 00000000 00:04 38928732                   /SYSV00000000 (deleted)
+7fab63a83000-7fab63aa0000 rw-s 00000000 00:04 38895963                   /SYSV00000000 (deleted)
+7fab63aa0000-7fab63abd000 rw-s 00000000 00:04 38863194                   /SYSV00000000 (deleted)
+7fab63abd000-7fab63ada000 rw-s 00000000 00:04 38830425                   /SYSV00000000 (deleted)
+7fab63ada000-7fab63af7000 rw-s 00000000 00:04 38797656                   /SYSV00000000 (deleted)
+7fab63af7000-7fab63b14000 rw-s 00000000 00:04 38764887                   /SYSV00000000 (deleted)
+7fab63b14000-7fab63b31000 rw-s 00000000 00:04 38732118                   /SYSV00000000 (deleted)
+7fab63b31000-7fab63b4e000 rw-s 00000000 00:04 38699349                   /SYSV00000000 (deleted)
+7fab63b4e000-7fab63b6b000 rw-s 00000000 00:04 38666580                   /SYSV00000000 (deleted)
+7fab63b6b000-7fab63b88000 rw-s 00000000 00:04 38633811                   /SYSV00000000 (deleted)
+7fab63b88000-7fab63ba5000 rw-s 00000000 00:04 38601042                   /SYSV00000000 (deleted)
+7fab63ba5000-7fab63bc2000 rw-s 00000000 00:04 38568273                   /SYSV00000000 (deleted)
+7fab63bc2000-7fab63bdf000 rw-s 00000000 00:04 38535504                   /SYSV00000000 (deleted)
+7fab63bdf000-7fab63bfc000 rw-s 00000000 00:04 38469966                   /SYSV00000000 (deleted)
+7fab63bfc000-7fab63c19000 rw-s 00000000 00:04 38502735                   /SYSV00000000 (deleted)
+7fab63c19000-7fab63c36000 rw-s 00000000 00:04 38437197                   /SYSV00000000 (deleted)
+7fab63c36000-7fab63c53000 rw-s 00000000 00:04 38404428                   /SYSV00000000 (deleted)
+7fab63c53000-7fab63c70000 rw-s 00000000 00:04 38371659                   /SYSV00000000 (deleted)
+7fab63c70000-7fab63c8d000 rw-s 00000000 00:04 38338890                   /SYSV00000000 (deleted)
+7fab63c8d000-7fab63caa000 rw-s 00000000 00:04 38306121                   /SYSV00000000 (deleted)
+7fab63caa000-7fab63cc7000 rw-s 00000000 00:04 38273352                   /SYSV00000000 (deleted)
+7fab63cc7000-7fab63ce4000 rw-s 00000000 00:04 38240583                   /SYSV00000000 (deleted)
+7fab63ce4000-7fab63d01000 rw-s 00000000 00:04 38207814                   /SYSV00000000 (deleted)
+7fab63d01000-7fab63d1e000 rw-s 00000000 00:04 38175045                   /SYSV00000000 (deleted)
+7fab63d1e000-7fab63d3b000 rw-s 00000000 00:04 38142276                   /SYSV00000000 (deleted)
+7fab63d3b000-7fab63d58000 rw-s 00000000 00:04 38109507                   /SYSV00000000 (deleted)
+7fab63d58000-7fab63d75000 rw-s 00000000 00:04 38076738                   /SYSV00000000 (deleted)
+7fab63d75000-7fab63d92000 rw-s 00000000 00:04 38043969                   /SYSV00000000 (deleted)
+7fab63d92000-7fab63daf000 rw-s 00000000 00:04 37814586                   /SYSV00000000 (deleted)
+7fab63daf000-7fab63dcc000 rw-s 00000000 00:04 37749048                   /SYSV00000000 (deleted)
+7fab63dcc000-7fab63de9000 rw-s 00000000 00:04 37781817                   /SYSV00000000 (deleted)
+7fab63de9000-7fab63e06000 rw-s 00000000 00:04 37585203                   /SYSV00000000 (deleted)
+7fab63e06000-7fab63e23000 rw-s 00000000 00:04 37716279                   /SYSV00000000 (deleted)
+7fab63e23000-7fab63e40000 rw-s 00000000 00:04 37683510                   /SYSV00000000 (deleted)
+7fab63e40000-7fab63e5d000 rw-s 00000000 00:04 37650741                   /SYSV00000000 (deleted)
+7fab63e5d000-7fab63e7a000 rw-s 00000000 00:04 37617972                   /SYSV00000000 (deleted)
+7fab63e7a000-7fab63e97000 rw-s 00000000 00:04 37552434                   /SYSV00000000 (deleted)
+7fab63e97000-7fab63eb4000 rw-s 00000000 00:04 37519665                   /SYSV00000000 (deleted)
+7fab63eb4000-7fab63ed1000 rw-s 00000000 00:04 37486896                   /SYSV00000000 (deleted)
+7fab63ed1000-7fab63f87000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab63f87000-7fab6403d000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6403d000-7fab6405a000 rw-s 00000000 00:04 37454127                   /SYSV00000000 (deleted)
+7fab6405a000-7fab64077000 rw-s 00000000 00:04 37421358                   /SYSV00000000 (deleted)
+7fab64077000-7fab64094000 rw-s 00000000 00:04 37388589                   /SYSV00000000 (deleted)
+7fab64094000-7fab640b1000 rw-s 00000000 00:04 37355820                   /SYSV00000000 (deleted)
+7fab640b1000-7fab640ce000 rw-s 00000000 00:04 37323051                   /SYSV00000000 (deleted)
+7fab640ce000-7fab640eb000 rw-s 00000000 00:04 37290282                   /SYSV00000000 (deleted)
+7fab640eb000-7fab64108000 rw-s 00000000 00:04 37257513                   /SYSV00000000 (deleted)
+7fab64108000-7fab64125000 rw-s 00000000 00:04 37224744                   /SYSV00000000 (deleted)
+7fab64125000-7fab64142000 rw-s 00000000 00:04 37191975                   /SYSV00000000 (deleted)
+7fab64142000-7fab6415f000 rw-s 00000000 00:04 37159206                   /SYSV00000000 (deleted)
+7fab6415f000-7fab6417c000 rw-s 00000000 00:04 37126437                   /SYSV00000000 (deleted)
+7fab6417c000-7fab64199000 rw-s 00000000 00:04 37093668                   /SYSV00000000 (deleted)
+7fab64199000-7fab641b6000 rw-s 00000000 00:04 37060899                   /SYSV00000000 (deleted)
+7fab641b6000-7fab641d3000 rw-s 00000000 00:04 37028130                   /SYSV00000000 (deleted)
+7fab641d3000-7fab641f0000 rw-s 00000000 00:04 36995361                   /SYSV00000000 (deleted)
+7fab641f0000-7fab6420d000 rw-s 00000000 00:04 36962592                   /SYSV00000000 (deleted)
+7fab6420d000-7fab6422a000 rw-s 00000000 00:04 36929823                   /SYSV00000000 (deleted)
+7fab6422a000-7fab64247000 rw-s 00000000 00:04 36897054                   /SYSV00000000 (deleted)
+7fab64247000-7fab64264000 rw-s 00000000 00:04 36864285                   /SYSV00000000 (deleted)
+7fab64264000-7fab6431a000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6431a000-7fab64337000 rw-s 00000000 00:04 36831516                   /SYSV00000000 (deleted)
+7fab64337000-7fab64354000 rw-s 00000000 00:04 36798747                   /SYSV00000000 (deleted)
+7fab64354000-7fab64371000 rw-s 00000000 00:04 36765978                   /SYSV00000000 (deleted)
+7fab64371000-7fab6438e000 rw-s 00000000 00:04 36733209                   /SYSV00000000 (deleted)
+7fab6438e000-7fab643ab000 rw-s 00000000 00:04 36700440                   /SYSV00000000 (deleted)
+7fab643ab000-7fab643c8000 rw-s 00000000 00:04 36667671                   /SYSV00000000 (deleted)
+7fab643c8000-7fab643e5000 rw-s 00000000 00:04 36634902                   /SYSV00000000 (deleted)
+7fab643e5000-7fab64402000 rw-s 00000000 00:04 36602133                   /SYSV00000000 (deleted)
+7fab64402000-7fab6441f000 rw-s 00000000 00:04 36176136                   /SYSV00000000 (deleted)
+7fab6441f000-7fab6443c000 rw-s 00000000 00:04 36143367                   /SYSV00000000 (deleted)
+7fab6443c000-7fab64459000 rw-s 00000000 00:04 36110598                   /SYSV00000000 (deleted)
+7fab64459000-7fab64476000 rw-s 00000000 00:04 36077829                   /SYSV00000000 (deleted)
+7fab64476000-7fab64493000 rw-s 00000000 00:04 36045060                   /SYSV00000000 (deleted)
+7fab64493000-7fab644b0000 rw-s 00000000 00:04 36012291                   /SYSV00000000 (deleted)
+7fab644b0000-7fab644cd000 rw-s 00000000 00:04 35979522                   /SYSV00000000 (deleted)
+7fab644cd000-7fab644ea000 rw-s 00000000 00:04 35946753                   /SYSV00000000 (deleted)
+7fab644ea000-7fab64507000 rw-s 00000000 00:04 35913984                   /SYSV00000000 (deleted)
+7fab64507000-7fab64524000 rw-s 00000000 00:04 35881215                   /SYSV00000000 (deleted)
+7fab64524000-7fab64541000 rw-s 00000000 00:04 35848446                   /SYSV00000000 (deleted)
+7fab64541000-7fab6455e000 rw-s 00000000 00:04 35815677                   /SYSV00000000 (deleted)
+7fab6455e000-7fab6457b000 rw-s 00000000 00:04 35782908                   /SYSV00000000 (deleted)
+7fab6457b000-7fab64598000 rw-s 00000000 00:04 35750139                   /SYSV00000000 (deleted)
+7fab64598000-7fab645b5000 rw-s 00000000 00:04 35717370                   /SYSV00000000 (deleted)
+7fab645b5000-7fab645d2000 rw-s 00000000 00:04 35684601                   /SYSV00000000 (deleted)
+7fab645d2000-7fab645ef000 rw-s 00000000 00:04 35651832                   /SYSV00000000 (deleted)
+7fab645ef000-7fab6460c000 rw-s 00000000 00:04 35619063                   /SYSV00000000 (deleted)
+7fab6460c000-7fab64629000 rw-s 00000000 00:04 35586294                   /SYSV00000000 (deleted)
+7fab64629000-7fab64646000 rw-s 00000000 00:04 35553525                   /SYSV00000000 (deleted)
+7fab64646000-7fab64663000 rw-s 00000000 00:04 35520756                   /SYSV00000000 (deleted)
+7fab64663000-7fab64680000 rw-s 00000000 00:04 35487987                   /SYSV00000000 (deleted)
+7fab64680000-7fab6469d000 rw-s 00000000 00:04 35455218                   /SYSV00000000 (deleted)
+7fab6469d000-7fab646ba000 rw-s 00000000 00:04 35422449                   /SYSV00000000 (deleted)
+7fab646ba000-7fab646d7000 rw-s 00000000 00:04 35389680                   /SYSV00000000 (deleted)
+7fab646d7000-7fab646f4000 rw-s 00000000 00:04 35160285                   /SYSV00000000 (deleted)
+7fab646f4000-7fab64711000 rw-s 00000000 00:04 35127515                   /SYSV00000000 (deleted)
+7fab64711000-7fab6472e000 rw-s 00000000 00:04 35094746                   /SYSV00000000 (deleted)
+7fab6472e000-7fab6474b000 rw-s 00000000 00:04 35061976                   /SYSV00000000 (deleted)
+7fab6474b000-7fab64768000 rw-s 00000000 00:04 35029207                   /SYSV00000000 (deleted)
+7fab64768000-7fab64785000 rw-s 00000000 00:04 34996438                   /SYSV00000000 (deleted)
+7fab64785000-7fab647a2000 rw-s 00000000 00:04 34963669                   /SYSV00000000 (deleted)
+7fab647a2000-7fab647bf000 rw-s 00000000 00:04 34930900                   /SYSV00000000 (deleted)
+7fab647bf000-7fab647dc000 rw-s 00000000 00:04 34898131                   /SYSV00000000 (deleted)
+7fab647dc000-7fab647f9000 rw-s 00000000 00:04 34865362                   /SYSV00000000 (deleted)
+7fab647f9000-7fab64816000 rw-s 00000000 00:04 34832593                   /SYSV00000000 (deleted)
+7fab64816000-7fab64833000 rw-s 00000000 00:04 34799824                   /SYSV00000000 (deleted)
+7fab64833000-7fab64850000 rw-s 00000000 00:04 34767055                   /SYSV00000000 (deleted)
+7fab64850000-7fab6486d000 rw-s 00000000 00:04 34734286                   /SYSV00000000 (deleted)
+7fab6486d000-7fab6488a000 rw-s 00000000 00:04 34701517                   /SYSV00000000 (deleted)
+7fab6488a000-7fab648a7000 rw-s 00000000 00:04 34668748                   /SYSV00000000 (deleted)
+7fab648a7000-7fab648c4000 rw-s 00000000 00:04 34635979                   /SYSV00000000 (deleted)
+7fab648c4000-7fab648e1000 rw-s 00000000 00:04 34603210                   /SYSV00000000 (deleted)
+7fab648e1000-7fab648fe000 rw-s 00000000 00:04 34570441                   /SYSV00000000 (deleted)
+7fab648fe000-7fab6491b000 rw-s 00000000 00:04 34537672                   /SYSV00000000 (deleted)
+7fab6491b000-7fab64938000 rw-s 00000000 00:04 34504903                   /SYSV00000000 (deleted)
+7fab64938000-7fab64955000 rw-s 00000000 00:04 34472134                   /SYSV00000000 (deleted)
+7fab64955000-7fab64972000 rw-s 00000000 00:04 34439365                   /SYSV00000000 (deleted)
+7fab64972000-7fab6498f000 rw-s 00000000 00:04 34406596                   /SYSV00000000 (deleted)
+7fab6498f000-7fab649ac000 rw-s 00000000 00:04 34373827                   /SYSV00000000 (deleted)
+7fab649ac000-7fab649c9000 rw-s 00000000 00:04 34341058                   /SYSV00000000 (deleted)
+7fab649c9000-7fab649e6000 rw-s 00000000 00:04 34308289                   /SYSV00000000 (deleted)
+7fab649e6000-7fab64a03000 rw-s 00000000 00:04 34275520                   /SYSV00000000 (deleted)
+7fab64a03000-7fab64a20000 rw-s 00000000 00:04 34242751                   /SYSV00000000 (deleted)
+7fab64a20000-7fab64a3d000 rw-s 00000000 00:04 34209982                   /SYSV00000000 (deleted)
+7fab64a3d000-7fab64a5a000 rw-s 00000000 00:04 34177213                   /SYSV00000000 (deleted)
+7fab64a5a000-7fab64a77000 rw-s 00000000 00:04 34144444                   /SYSV00000000 (deleted)
+7fab64a77000-7fab64a94000 rw-s 00000000 00:04 34111675                   /SYSV00000000 (deleted)
+7fab64a94000-7fab64ab1000 rw-s 00000000 00:04 34078906                   /SYSV00000000 (deleted)
+7fab64ab1000-7fab64ace000 rw-s 00000000 00:04 34046137                   /SYSV00000000 (deleted)
+7fab64ace000-7fab64aeb000 rw-s 00000000 00:04 34013368                   /SYSV00000000 (deleted)
+7fab64aeb000-7fab64b08000 rw-s 00000000 00:04 33980599                   /SYSV00000000 (deleted)
+7fab64b08000-7fab64b25000 rw-s 00000000 00:04 33947830                   /SYSV00000000 (deleted)
+7fab64b25000-7fab64b42000 rw-s 00000000 00:04 33915061                   /SYSV00000000 (deleted)
+7fab64b42000-7fab64b5f000 rw-s 00000000 00:04 33882292                   /SYSV00000000 (deleted)
+7fab64b5f000-7fab64b7c000 rw-s 00000000 00:04 33849523                   /SYSV00000000 (deleted)
+7fab64b7c000-7fab64b99000 rw-s 00000000 00:04 33816754                   /SYSV00000000 (deleted)
+7fab64b99000-7fab64bb6000 rw-s 00000000 00:04 33783985                   /SYSV00000000 (deleted)
+7fab64bb6000-7fab64bd3000 rw-s 00000000 00:04 33751216                   /SYSV00000000 (deleted)
+7fab64bd3000-7fab64bf0000 rw-s 00000000 00:04 33718447                   /SYSV00000000 (deleted)
+7fab64bf0000-7fab64c0d000 rw-s 00000000 00:04 33685678                   /SYSV00000000 (deleted)
+7fab64c0d000-7fab64c2a000 rw-s 00000000 00:04 33652909                   /SYSV00000000 (deleted)
+7fab64c2a000-7fab64c47000 rw-s 00000000 00:04 33620140                   /SYSV00000000 (deleted)
+7fab64c47000-7fab64c64000 rw-s 00000000 00:04 33587371                   /SYSV00000000 (deleted)
+7fab64c64000-7fab64c81000 rw-s 00000000 00:04 33554602                   /SYSV00000000 (deleted)
+7fab64c81000-7fab64c9e000 rw-s 00000000 00:04 33521833                   /SYSV00000000 (deleted)
+7fab64c9e000-7fab64cbb000 rw-s 00000000 00:04 33489064                   /SYSV00000000 (deleted)
+7fab64cbb000-7fab64cd8000 rw-s 00000000 00:04 33456295                   /SYSV00000000 (deleted)
+7fab64cd8000-7fab64cf5000 rw-s 00000000 00:04 33423526                   /SYSV00000000 (deleted)
+7fab64cf5000-7fab64d12000 rw-s 00000000 00:04 33390757                   /SYSV00000000 (deleted)
+7fab64d12000-7fab64d2f000 rw-s 00000000 00:04 33357988                   /SYSV00000000 (deleted)
+7fab64d2f000-7fab64d4c000 rw-s 00000000 00:04 33325219                   /SYSV00000000 (deleted)
+7fab64d4c000-7fab64d69000 rw-s 00000000 00:04 33292450                   /SYSV00000000 (deleted)
+7fab64d69000-7fab64d86000 rw-s 00000000 00:04 33259681                   /SYSV00000000 (deleted)
+7fab64d86000-7fab64da3000 rw-s 00000000 00:04 33226912                   /SYSV00000000 (deleted)
+7fab64da3000-7fab64dc0000 rw-s 00000000 00:04 33194143                   /SYSV00000000 (deleted)
+7fab64dc0000-7fab64ddd000 rw-s 00000000 00:04 33161374                   /SYSV00000000 (deleted)
+7fab64ddd000-7fab64dfa000 rw-s 00000000 00:04 33128605                   /SYSV00000000 (deleted)
+7fab64dfa000-7fab64e17000 rw-s 00000000 00:04 33095836                   /SYSV00000000 (deleted)
+7fab64e17000-7fab64e34000 rw-s 00000000 00:04 33063067                   /SYSV00000000 (deleted)
+7fab64e34000-7fab64e51000 rw-s 00000000 00:04 33030298                   /SYSV00000000 (deleted)
+7fab64e51000-7fab64e52000 ---p 00000000 00:00 0 
+7fab64e52000-7fab64f52000 rw-p 00000000 00:00 0                          [stack:20719]
+7fab64f52000-7fab64f53000 ---p 00000000 00:00 0 
+7fab64f53000-7fab65053000 rw-p 00000000 00:00 0                          [stack:20718]
+7fab65053000-7fab65054000 ---p 00000000 00:00 0 
+7fab65054000-7fab65154000 rw-p 00000000 00:00 0                          [stack:20717]
+7fab65154000-7fab65155000 ---p 00000000 00:00 0 
+7fab65155000-7fab65255000 rw-p 00000000 00:00 0                          [stack:20716]
+7fab65255000-7fab65256000 ---p 00000000 00:00 0 
+7fab65256000-7fab65356000 rw-p 00000000 00:00 0                          [stack:20715]
+7fab65356000-7fab65357000 ---p 00000000 00:00 0 
+7fab65357000-7fab65457000 rw-p 00000000 00:00 0                          [stack:20714]
+7fab65457000-7fab65458000 ---p 00000000 00:00 0 
+7fab65458000-7fab65558000 rw-p 00000000 00:00 0                          [stack:20713]
+7fab65558000-7fab65559000 ---p 00000000 00:00 0 
+7fab65559000-7fab65659000 rw-p 00000000 00:00 0                          [stack:20712]
+7fab65659000-7fab6565a000 ---p 00000000 00:00 0 
+7fab6565a000-7fab6575a000 rw-p 00000000 00:00 0                          [stack:20711]
+7fab6575a000-7fab6575b000 ---p 00000000 00:00 0 
+7fab6575b000-7fab6585b000 rw-p 00000000 00:00 0                          [stack:20710]
+7fab6585b000-7fab6585c000 ---p 00000000 00:00 0 
+7fab6585c000-7fab6595c000 rw-p 00000000 00:00 0                          [stack:20709]
+7fab6595c000-7fab6595d000 ---p 00000000 00:00 0 
+7fab6595d000-7fab65a5d000 rw-p 00000000 00:00 0                          [stack:20708]
+7fab65a5d000-7fab65a5e000 ---p 00000000 00:00 0 
+7fab65a5e000-7fab65b5e000 rw-p 00000000 00:00 0                          [stack:20707]
+7fab65b5e000-7fab65b5f000 ---p 00000000 00:00 0 
+7fab65b5f000-7fab65c5f000 rw-p 00000000 00:00 0                          [stack:20706]
+7fab65c5f000-7fab65c60000 ---p 00000000 00:00 0 
+7fab65c60000-7fab65d60000 rw-p 00000000 00:00 0                          [stack:20705]
+7fab65d60000-7fab65d61000 ---p 00000000 00:00 0 
+7fab65d61000-7fab65e61000 rw-p 00000000 00:00 0                          [stack:20704]
+7fab65e61000-7fab65e62000 ---p 00000000 00:00 0 
+7fab65e62000-7fab65f62000 rw-p 00000000 00:00 0                          [stack:20703]
+7fab65f62000-7fab65f63000 ---p 00000000 00:00 0 
+7fab65f63000-7fab66063000 rw-p 00000000 00:00 0                          [stack:20702]
+7fab66063000-7fab66064000 ---p 00000000 00:00 0 
+7fab66064000-7fab66164000 rw-p 00000000 00:00 0                          [stack:20701]
+7fab66164000-7fab66165000 ---p 00000000 00:00 0 
+7fab66165000-7fab66265000 rw-p 00000000 00:00 0                          [stack:20700]
+7fab66265000-7fab66266000 ---p 00000000 00:00 0 
+7fab66266000-7fab66366000 rw-p 00000000 00:00 0                          [stack:20699]
+7fab66366000-7fab66367000 ---p 00000000 00:00 0 
+7fab66367000-7fab66467000 rw-p 00000000 00:00 0                          [stack:20698]
+7fab66467000-7fab66468000 ---p 00000000 00:00 0 
+7fab66468000-7fab66568000 rw-p 00000000 00:00 0                          [stack:20697]
+7fab66568000-7fab66569000 ---p 00000000 00:00 0 
+7fab66569000-7fab66669000 rw-p 00000000 00:00 0                          [stack:20696]
+7fab66669000-7fab6666a000 ---p 00000000 00:00 0 
+7fab6666a000-7fab6676a000 rw-p 00000000 00:00 0                          [stack:20695]
+7fab6676a000-7fab6676b000 ---p 00000000 00:00 0 
+7fab6676b000-7fab6686b000 rw-p 00000000 00:00 0                          [stack:20694]
+7fab6686b000-7fab6686c000 ---p 00000000 00:00 0 
+7fab6686c000-7fab6696c000 rw-p 00000000 00:00 0                          [stack:20693]
+7fab6696c000-7fab6696d000 ---p 00000000 00:00 0 
+7fab6696d000-7fab66a6d000 rw-p 00000000 00:00 0                          [stack:20692]
+7fab66a6d000-7fab66a6e000 ---p 00000000 00:00 0 
+7fab66a6e000-7fab66b6e000 rw-p 00000000 00:00 0                          [stack:20691]
+7fab66b6e000-7fab66b6f000 ---p 00000000 00:00 0 
+7fab66b6f000-7fab66c6f000 rw-p 00000000 00:00 0                          [stack:20690]
+7fab66c6f000-7fab66c70000 ---p 00000000 00:00 0 
+7fab66c70000-7fab66d70000 rw-p 00000000 00:00 0                          [stack:20689]
+7fab66d70000-7fab66d71000 ---p 00000000 00:00 0 
+7fab66d71000-7fab66e71000 rw-p 00000000 00:00 0                          [stack:20688]
+7fab66e71000-7fab66e72000 ---p 00000000 00:00 0 
+7fab66e72000-7fab66f72000 rw-p 00000000 00:00 0                          [stack:20687]
+7fab66f72000-7fab66f73000 ---p 00000000 00:00 0 
+7fab66f73000-7fab67073000 rw-p 00000000 00:00 0                          [stack:20686]
+7fab67073000-7fab67074000 ---p 00000000 00:00 0 
+7fab67074000-7fab67174000 rw-p 00000000 00:00 0                          [stack:20685]
+7fab67174000-7fab67175000 ---p 00000000 00:00 0 
+7fab67175000-7fab67275000 rw-p 00000000 00:00 0                          [stack:20684]
+7fab67275000-7fab67276000 ---p 00000000 00:00 0 
+7fab67276000-7fab67376000 rw-p 00000000 00:00 0                          [stack:20683]
+7fab67376000-7fab67377000 ---p 00000000 00:00 0 
+7fab67377000-7fab67477000 rw-p 00000000 00:00 0                          [stack:20682]
+7fab67477000-7fab67478000 ---p 00000000 00:00 0 
+7fab67478000-7fab67578000 rw-p 00000000 00:00 0                          [stack:20681]
+7fab67578000-7fab67579000 ---p 00000000 00:00 0 
+7fab67579000-7fab67679000 rw-p 00000000 00:00 0                          [stack:20680]
+7fab67679000-7fab6767a000 ---p 00000000 00:00 0 
+7fab6767a000-7fab6777a000 rw-p 00000000 00:00 0                          [stack:20679]
+7fab6777a000-7fab6777b000 ---p 00000000 00:00 0 
+7fab6777b000-7fab6787b000 rw-p 00000000 00:00 0                          [stack:20678]
+7fab6787b000-7fab6787c000 ---p 00000000 00:00 0 
+7fab6787c000-7fab6797c000 rw-p 00000000 00:00 0                          [stack:20677]
+7fab6797c000-7fab6797d000 ---p 00000000 00:00 0 
+7fab6797d000-7fab67a7d000 rw-p 00000000 00:00 0                          [stack:20676]
+7fab67a7d000-7fab67a7e000 ---p 00000000 00:00 0 
+7fab67a7e000-7fab67b7e000 rw-p 00000000 00:00 0                          [stack:20675]
+7fab67b7e000-7fab67b7f000 ---p 00000000 00:00 0 
+7fab67b7f000-7fab67c7f000 rw-p 00000000 00:00 0                          [stack:20674]
+7fab67c7f000-7fab67c80000 ---p 00000000 00:00 0 
+7fab67c80000-7fab67d80000 rw-p 00000000 00:00 0                          [stack:20673]
+7fab67d80000-7fab67d81000 ---p 00000000 00:00 0 
+7fab67d81000-7fab67e81000 rw-p 00000000 00:00 0                          [stack:20672]
+7fab67e81000-7fab67e82000 ---p 00000000 00:00 0 
+7fab67e82000-7fab67f82000 rw-p 00000000 00:00 0                          [stack:20671]
+7fab67f82000-7fab67f83000 ---p 00000000 00:00 0 
+7fab67f83000-7fab68083000 rw-p 00000000 00:00 0                          [stack:20670]
+7fab68083000-7fab68084000 ---p 00000000 00:00 0 
+7fab68084000-7fab68184000 rw-p 00000000 00:00 0                          [stack:20669]
+7fab68184000-7fab68185000 ---p 00000000 00:00 0 
+7fab68185000-7fab68285000 rw-p 00000000 00:00 0                          [stack:20668]
+7fab68285000-7fab68286000 ---p 00000000 00:00 0 
+7fab68286000-7fab68386000 rw-p 00000000 00:00 0                          [stack:20667]
+7fab68386000-7fab68387000 ---p 00000000 00:00 0 
+7fab68387000-7fab68487000 rw-p 00000000 00:00 0                          [stack:20666]
+7fab68487000-7fab68488000 ---p 00000000 00:00 0 
+7fab68488000-7fab68588000 rw-p 00000000 00:00 0                          [stack:20665]
+7fab68588000-7fab68589000 ---p 00000000 00:00 0 
+7fab68589000-7fab68689000 rw-p 00000000 00:00 0                          [stack:20664]
+7fab68689000-7fab6868a000 ---p 00000000 00:00 0 
+7fab6868a000-7fab6878a000 rw-p 00000000 00:00 0                          [stack:20663]
+7fab6878a000-7fab6878c000 r-xp 00000000 08:01 4332853                    /usr/lib/vlc/plugins/misc/libdbus_screensaver_plugin.so
+7fab6878c000-7fab6898b000 ---p 00002000 08:01 4332853                    /usr/lib/vlc/plugins/misc/libdbus_screensaver_plugin.so
+7fab6898b000-7fab6898c000 r--p 00001000 08:01 4332853                    /usr/lib/vlc/plugins/misc/libdbus_screensaver_plugin.so
+7fab6898c000-7fab6898d000 rw-p 00002000 08:01 4332853                    /usr/lib/vlc/plugins/misc/libdbus_screensaver_plugin.so
+7fab6898d000-7fab6898e000 ---p 00000000 00:00 0 
+7fab6898e000-7fab68a8e000 rw-p 00000000 00:00 0                          [stack:20662]
+7fab68a8e000-7fab68a8f000 ---p 00000000 00:00 0 
+7fab68a8f000-7fab68b8f000 rw-p 00000000 00:00 0                          [stack:20661]
+7fab68b8f000-7fab68b90000 ---p 00000000 00:00 0 
+7fab68b90000-7fab68c90000 rw-p 00000000 00:00 0                          [stack:20660]
+7fab68c90000-7fab68c91000 ---p 00000000 00:00 0 
+7fab68c91000-7fab68d91000 rw-p 00000000 00:00 0                          [stack:20659]
+7fab68d91000-7fab68d92000 ---p 00000000 00:00 0 
+7fab68d92000-7fab68e92000 rw-p 00000000 00:00 0                          [stack:20658]
+7fab68e92000-7fab68e93000 ---p 00000000 00:00 0 
+7fab68e93000-7fab68f93000 rw-p 00000000 00:00 0                          [stack:20657]
+7fab68f93000-7fab68f94000 ---p 00000000 00:00 0 
+7fab68f94000-7fab69094000 rw-p 00000000 00:00 0                          [stack:20656]
+7fab69094000-7fab69095000 ---p 00000000 00:00 0 
+7fab69095000-7fab69195000 rw-p 00000000 00:00 0                          [stack:20655]
+7fab69195000-7fab69196000 ---p 00000000 00:00 0 
+7fab69196000-7fab69296000 rw-p 00000000 00:00 0                          [stack:20653]
+7fab69296000-7fab69297000 ---p 00000000 00:00 0 
+7fab69297000-7fab69397000 rw-p 00000000 00:00 0                          [stack:20654]
+7fab69397000-7fab69398000 ---p 00000000 00:00 0 
+7fab69398000-7fab69498000 rw-p 00000000 00:00 0                          [stack:20652]
+7fab69498000-7fab69499000 ---p 00000000 00:00 0 
+7fab69499000-7fab69599000 rw-p 00000000 00:00 0                          [stack:20649]
+7fab69599000-7fab6959a000 ---p 00000000 00:00 0 
+7fab6959a000-7fab6969a000 rw-p 00000000 00:00 0                          [stack:20650]
+7fab6969a000-7fab6969b000 ---p 00000000 00:00 0 
+7fab6969b000-7fab6979b000 rw-p 00000000 00:00 0                          [stack:20651]
+7fab6979b000-7fab6979c000 ---p 00000000 00:00 0 
+7fab6979c000-7fab6989c000 rw-p 00000000 00:00 0                          [stack:20648]
+7fab6989c000-7fab6989d000 ---p 00000000 00:00 0 
+7fab6989d000-7fab6999d000 rw-p 00000000 00:00 0                          [stack:20647]
+7fab6999d000-7fab6999e000 ---p 00000000 00:00 0 
+7fab6999e000-7fab69a9e000 rw-p 00000000 00:00 0                          [stack:20646]
+7fab69a9e000-7fab69a9f000 ---p 00000000 00:00 0 
+7fab69a9f000-7fab69b9f000 rw-p 00000000 00:00 0                          [stack:20644]
+7fab69b9f000-7fab69ba0000 ---p 00000000 00:00 0 
+7fab69ba0000-7fab69ca0000 rw-p 00000000 00:00 0                          [stack:20643]
+7fab69ca0000-7fab69ca1000 ---p 00000000 00:00 0 
+7fab69ca1000-7fab69da1000 rw-p 00000000 00:00 0                          [stack:20645]
+7fab69da1000-7fab69da2000 ---p 00000000 00:00 0 
+7fab69da2000-7fab69ea2000 rw-p 00000000 00:00 0                          [stack:20642]
+7fab69ea2000-7fab69ea3000 ---p 00000000 00:00 0 
+7fab69ea3000-7fab69fa3000 rw-p 00000000 00:00 0                          [stack:20641]
+7fab69fa3000-7fab69fa4000 ---p 00000000 00:00 0 
+7fab69fa4000-7fab6a0a4000 rw-p 00000000 00:00 0                          [stack:20639]
+7fab6a0a4000-7fab6a0a5000 ---p 00000000 00:00 0 
+7fab6a0a5000-7fab6a1a5000 rw-p 00000000 00:00 0                          [stack:20640]
+7fab6a1a5000-7fab6a1a6000 ---p 00000000 00:00 0 
+7fab6a1a6000-7fab6a2a6000 rw-p 00000000 00:00 0                          [stack:20625]
+7fab6a2a6000-7fab6a2a7000 ---p 00000000 00:00 0 
+7fab6a2a7000-7fab6a3a7000 rw-p 00000000 00:00 0                          [stack:20636]
+7fab6a3a7000-7fab6a3a8000 ---p 00000000 00:00 0 
+7fab6a3a8000-7fab6a4a8000 rw-p 00000000 00:00 0                          [stack:20637]
+7fab6a4a8000-7fab6a4a9000 ---p 00000000 00:00 0 
+7fab6a4a9000-7fab6a5a9000 rw-p 00000000 00:00 0                          [stack:20638]
+7fab6a5a9000-7fab6a5aa000 ---p 00000000 00:00 0 
+7fab6a5aa000-7fab6a6aa000 rw-p 00000000 00:00 0                          [stack:20629]
+7fab6a6aa000-7fab6a6ab000 ---p 00000000 00:00 0 
+7fab6a6ab000-7fab6a7ab000 rw-p 00000000 00:00 0                          [stack:20628]
+7fab6a7ab000-7fab6a7ac000 ---p 00000000 00:00 0 
+7fab6a7ac000-7fab6a8ac000 rw-p 00000000 00:00 0                          [stack:20635]
+7fab6a8ac000-7fab6a8ad000 ---p 00000000 00:00 0 
+7fab6a8ad000-7fab6a9ad000 rw-p 00000000 00:00 0                          [stack:20633]
+7fab6a9ad000-7fab6a9ae000 ---p 00000000 00:00 0 
+7fab6a9ae000-7fab6aaae000 rw-p 00000000 00:00 0                          [stack:20630]
+7fab6aaae000-7fab6aaaf000 ---p 00000000 00:00 0 
+7fab6aaaf000-7fab6abaf000 rw-p 00000000 00:00 0                          [stack:20632]
+7fab6abaf000-7fab6abb0000 ---p 00000000 00:00 0 
+7fab6abb0000-7fab6acb0000 rw-p 00000000 00:00 0                          [stack:20634]
+7fab6acb0000-7fab6acb1000 ---p 00000000 00:00 0 
+7fab6acb1000-7fab6adb1000 rw-p 00000000 00:00 0                          [stack:20631]
+7fab6adb1000-7fab6adb2000 ---p 00000000 00:00 0 
+7fab6adb2000-7fab6aeb2000 rw-p 00000000 00:00 0                          [stack:20627]
+7fab6aeb2000-7fab6aeb3000 ---p 00000000 00:00 0 
+7fab6aeb3000-7fab6afb3000 rw-p 00000000 00:00 0                          [stack:20626]
+7fab6afb3000-7fab6afb4000 ---p 00000000 00:00 0 
+7fab6afb4000-7fab6b0b4000 rw-p 00000000 00:00 0                          [stack:20624]
+7fab6b0b4000-7fab6b0b5000 ---p 00000000 00:00 0 
+7fab6b0b5000-7fab6b1b5000 rw-p 00000000 00:00 0                          [stack:20621]
+7fab6b1b5000-7fab6b1b6000 ---p 00000000 00:00 0 
+7fab6b1b6000-7fab6b2b6000 rw-p 00000000 00:00 0                          [stack:20623]
+7fab6b2b6000-7fab6b2b7000 ---p 00000000 00:00 0 
+7fab6b2b7000-7fab6b3b7000 rw-p 00000000 00:00 0                          [stack:20622]
+7fab6b3b7000-7fab6b3b8000 ---p 00000000 00:00 0 
+7fab6b3b8000-7fab6b4b8000 rw-p 00000000 00:00 0                          [stack:20614]
+7fab6b4b8000-7fab6b4b9000 ---p 00000000 00:00 0 
+7fab6b4b9000-7fab6b5b9000 rw-p 00000000 00:00 0                          [stack:20615]
+7fab6b5b9000-7fab6b5ba000 ---p 00000000 00:00 0 
+7fab6b5ba000-7fab6b6ba000 rw-p 00000000 00:00 0                          [stack:20616]
+7fab6b6ba000-7fab6b770000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6b770000-7fab6b771000 ---p 00000000 00:00 0 
+7fab6b771000-7fab6b871000 rw-p 00000000 00:00 0                          [stack:20620]
+7fab6b871000-7fab6b872000 ---p 00000000 00:00 0 
+7fab6b872000-7fab6b972000 rw-p 00000000 00:00 0                          [stack:20613]
+7fab6b972000-7fab6b973000 ---p 00000000 00:00 0 
+7fab6b973000-7fab6ba73000 rw-p 00000000 00:00 0                          [stack:20619]
+7fab6ba73000-7fab6ba74000 ---p 00000000 00:00 0 
+7fab6ba74000-7fab6bb74000 rw-p 00000000 00:00 0                          [stack:20618]
+7fab6bb74000-7fab6bb75000 ---p 00000000 00:00 0 
+7fab6bb75000-7fab6bc75000 rw-p 00000000 00:00 0                          [stack:20612]
+7fab6bc75000-7fab6bc76000 ---p 00000000 00:00 0 
+7fab6bc76000-7fab6bd76000 rw-p 00000000 00:00 0                          [stack:20617]
+7fab6bd76000-7fab6bd77000 ---p 00000000 00:00 0 
+7fab6bd77000-7fab6be77000 rw-p 00000000 00:00 0                          [stack:20611]
+7fab6be77000-7fab6be78000 ---p 00000000 00:00 0 
+7fab6be78000-7fab6bf78000 rw-p 00000000 00:00 0                          [stack:20608]
+7fab6bf78000-7fab6bf79000 ---p 00000000 00:00 0 
+7fab6bf79000-7fab6c079000 rw-p 00000000 00:00 0                          [stack:20610]
+7fab6c079000-7fab6c07a000 ---p 00000000 00:00 0 
+7fab6c07a000-7fab6c17a000 rw-p 00000000 00:00 0                          [stack:20607]
+7fab6c17a000-7fab6c17b000 ---p 00000000 00:00 0 
+7fab6c17b000-7fab6c27b000 rw-p 00000000 00:00 0                          [stack:20609]
+7fab6c27b000-7fab6c27c000 ---p 00000000 00:00 0 
+7fab6c27c000-7fab6c37c000 rw-p 00000000 00:00 0                          [stack:20606]
+7fab6c37c000-7fab6c37d000 ---p 00000000 00:00 0 
+7fab6c37d000-7fab6c47d000 rw-p 00000000 00:00 0                          [stack:20605]
+7fab6c47d000-7fab6c47e000 ---p 00000000 00:00 0 
+7fab6c47e000-7fab6c57e000 rw-p 00000000 00:00 0                          [stack:20604]
+7fab6c57e000-7fab6c57f000 ---p 00000000 00:00 0 
+7fab6c57f000-7fab6c67f000 rw-p 00000000 00:00 0                          [stack:20603]
+7fab6c67f000-7fab6c681000 r-xp 00000000 08:01 3941467                    /usr/lib/x86_64-linux-gnu/libxcb-keysyms.so.1.0.0
+7fab6c681000-7fab6c880000 ---p 00002000 08:01 3941467                    /usr/lib/x86_64-linux-gnu/libxcb-keysyms.so.1.0.0
+7fab6c880000-7fab6c881000 r--p 00001000 08:01 3941467                    /usr/lib/x86_64-linux-gnu/libxcb-keysyms.so.1.0.0
+7fab6c881000-7fab6c882000 rw-p 00002000 08:01 3941467                    /usr/lib/x86_64-linux-gnu/libxcb-keysyms.so.1.0.0
+7fab6c882000-7fab6c883000 ---p 00000000 00:00 0 
+7fab6c883000-7fab6c983000 rw-p 00000000 00:00 0                          [stack:20602]
+7fab6c983000-7fab6c988000 r-xp 00000000 08:01 4202775                    /usr/lib/vlc/plugins/video_output/libxcb_window_plugin.so
+7fab6c988000-7fab6cb88000 ---p 00005000 08:01 4202775                    /usr/lib/vlc/plugins/video_output/libxcb_window_plugin.so
+7fab6cb88000-7fab6cb89000 r--p 00005000 08:01 4202775                    /usr/lib/vlc/plugins/video_output/libxcb_window_plugin.so
+7fab6cb89000-7fab6cb8a000 rw-p 00006000 08:01 4202775                    /usr/lib/vlc/plugins/video_output/libxcb_window_plugin.so
+7fab6cb8a000-7fab6cb8b000 ---p 00000000 00:00 0 
+7fab6cb8b000-7fab6cc8b000 rw-p 00000000 00:00 0                          [stack:20601]
+7fab6cc8b000-7fab6cc8c000 ---p 00000000 00:00 0 
+7fab6cc8c000-7fab6cd8c000 rw-p 00000000 00:00 0                          [stack:20600]
+7fab6cd8c000-7fab6cd8d000 r-xp 00000000 08:01 4195201                    /usr/lib/vlc/plugins/video_filter/libyuvp_plugin.so
+7fab6cd8d000-7fab6cf8d000 ---p 00001000 08:01 4195201                    /usr/lib/vlc/plugins/video_filter/libyuvp_plugin.so
+7fab6cf8d000-7fab6cf8e000 r--p 00001000 08:01 4195201                    /usr/lib/vlc/plugins/video_filter/libyuvp_plugin.so
+7fab6cf8e000-7fab6cf8f000 rw-p 00002000 08:01 4195201                    /usr/lib/vlc/plugins/video_filter/libyuvp_plugin.so
+7fab6cf8f000-7fab6d045000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6d045000-7fab6d047000 r-xp 00000000 08:01 4195183                    /usr/lib/vlc/plugins/video_filter/libscale_plugin.so
+7fab6d047000-7fab6d246000 ---p 00002000 08:01 4195183                    /usr/lib/vlc/plugins/video_filter/libscale_plugin.so
+7fab6d246000-7fab6d247000 r--p 00001000 08:01 4195183                    /usr/lib/vlc/plugins/video_filter/libscale_plugin.so
+7fab6d247000-7fab6d248000 rw-p 00002000 08:01 4195183                    /usr/lib/vlc/plugins/video_filter/libscale_plugin.so
+7fab6d248000-7fab6d24a000 r-xp 00000000 08:01 4195116                    /usr/lib/vlc/plugins/video_chroma/libi422_i420_plugin.so
+7fab6d24a000-7fab6d449000 ---p 00002000 08:01 4195116                    /usr/lib/vlc/plugins/video_chroma/libi422_i420_plugin.so
+7fab6d449000-7fab6d44a000 r--p 00001000 08:01 4195116                    /usr/lib/vlc/plugins/video_chroma/libi422_i420_plugin.so
+7fab6d44a000-7fab6d44b000 rw-p 00002000 08:01 4195116                    /usr/lib/vlc/plugins/video_chroma/libi422_i420_plugin.so
+7fab6d44b000-7fab6d44e000 r-xp 00000000 08:01 4195112                    /usr/lib/vlc/plugins/video_chroma/libi420_yuy2_plugin.so
+7fab6d44e000-7fab6d64d000 ---p 00003000 08:01 4195112                    /usr/lib/vlc/plugins/video_chroma/libi420_yuy2_plugin.so
+7fab6d64d000-7fab6d64e000 r--p 00002000 08:01 4195112                    /usr/lib/vlc/plugins/video_chroma/libi420_yuy2_plugin.so
+7fab6d64e000-7fab6d64f000 rw-p 00003000 08:01 4195112                    /usr/lib/vlc/plugins/video_chroma/libi420_yuy2_plugin.so
+7fab6d64f000-7fab6d651000 r-xp 00000000 08:01 4195113                    /usr/lib/vlc/plugins/video_chroma/libi422_yuy2_plugin.so
+7fab6d651000-7fab6d851000 ---p 00002000 08:01 4195113                    /usr/lib/vlc/plugins/video_chroma/libi422_yuy2_plugin.so
+7fab6d851000-7fab6d852000 r--p 00002000 08:01 4195113                    /usr/lib/vlc/plugins/video_chroma/libi422_yuy2_plugin.so
+7fab6d852000-7fab6d853000 rw-p 00003000 08:01 4195113                    /usr/lib/vlc/plugins/video_chroma/libi422_yuy2_plugin.so
+7fab6d853000-7fab6d909000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6d909000-7fab6d90c000 r-xp 00000000 08:01 4195121                    /usr/lib/vlc/plugins/video_chroma/libyuy2_i420_plugin.so
+7fab6d90c000-7fab6db0b000 ---p 00003000 08:01 4195121                    /usr/lib/vlc/plugins/video_chroma/libyuy2_i420_plugin.so
+7fab6db0b000-7fab6db0c000 r--p 00002000 08:01 4195121                    /usr/lib/vlc/plugins/video_chroma/libyuy2_i420_plugin.so
+7fab6db0c000-7fab6db0d000 rw-p 00003000 08:01 4195121                    /usr/lib/vlc/plugins/video_chroma/libyuy2_i420_plugin.so
+7fab6db0d000-7fab6db0f000 r-xp 00000000 08:01 4195111                    /usr/lib/vlc/plugins/video_chroma/libyuy2_i422_plugin.so
+7fab6db0f000-7fab6dd0e000 ---p 00002000 08:01 4195111                    /usr/lib/vlc/plugins/video_chroma/libyuy2_i422_plugin.so
+7fab6dd0e000-7fab6dd0f000 r--p 00001000 08:01 4195111                    /usr/lib/vlc/plugins/video_chroma/libyuy2_i422_plugin.so
+7fab6dd0f000-7fab6dd10000 rw-p 00002000 08:01 4195111                    /usr/lib/vlc/plugins/video_chroma/libyuy2_i422_plugin.so
+7fab6dd10000-7fab6ddc6000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6ddc6000-7fab6ddcd000 r-xp 00000000 08:01 4195117                    /usr/lib/vlc/plugins/video_chroma/libi420_rgb_plugin.so
+7fab6ddcd000-7fab6dfcc000 ---p 00007000 08:01 4195117                    /usr/lib/vlc/plugins/video_chroma/libi420_rgb_plugin.so
+7fab6dfcc000-7fab6dfcd000 r--p 00006000 08:01 4195117                    /usr/lib/vlc/plugins/video_chroma/libi420_rgb_plugin.so
+7fab6dfcd000-7fab6dfce000 rw-p 00007000 08:01 4195117                    /usr/lib/vlc/plugins/video_chroma/libi420_rgb_plugin.so
+7fab6dfce000-7fab6dfd0000 r-xp 00000000 08:01 4195114                    /usr/lib/vlc/plugins/video_chroma/libgrey_yuv_plugin.so
+7fab6dfd0000-7fab6e1cf000 ---p 00002000 08:01 4195114                    /usr/lib/vlc/plugins/video_chroma/libgrey_yuv_plugin.so
+7fab6e1cf000-7fab6e1d0000 r--p 00001000 08:01 4195114                    /usr/lib/vlc/plugins/video_chroma/libgrey_yuv_plugin.so
+7fab6e1d0000-7fab6e1d1000 rw-p 00002000 08:01 4195114                    /usr/lib/vlc/plugins/video_chroma/libgrey_yuv_plugin.so
+7fab6e1d1000-7fab6e1d4000 r-xp 00000000 08:01 4202962                    /usr/lib/vlc/plugins/mmx/libi422_yuy2_mmx_plugin.so
+7fab6e1d4000-7fab6e3d3000 ---p 00003000 08:01 4202962                    /usr/lib/vlc/plugins/mmx/libi422_yuy2_mmx_plugin.so
+7fab6e3d3000-7fab6e3d4000 r--p 00002000 08:01 4202962                    /usr/lib/vlc/plugins/mmx/libi422_yuy2_mmx_plugin.so
+7fab6e3d4000-7fab6e3d5000 rw-p 00003000 08:01 4202962                    /usr/lib/vlc/plugins/mmx/libi422_yuy2_mmx_plugin.so
+7fab6e3d5000-7fab6e3e0000 r-xp 00000000 08:01 4202960                    /usr/lib/vlc/plugins/mmx/libi420_rgb_mmx_plugin.so
+7fab6e3e0000-7fab6e5df000 ---p 0000b000 08:01 4202960                    /usr/lib/vlc/plugins/mmx/libi420_rgb_mmx_plugin.so
+7fab6e5df000-7fab6e5e0000 r--p 0000a000 08:01 4202960                    /usr/lib/vlc/plugins/mmx/libi420_rgb_mmx_plugin.so
+7fab6e5e0000-7fab6e5e1000 rw-p 0000b000 08:01 4202960                    /usr/lib/vlc/plugins/mmx/libi420_rgb_mmx_plugin.so
+7fab6e5e1000-7fab6e5e6000 r-xp 00000000 08:01 4195108                    /usr/lib/vlc/plugins/sse2/libi422_yuy2_sse2_plugin.so
+7fab6e5e6000-7fab6e7e5000 ---p 00005000 08:01 4195108                    /usr/lib/vlc/plugins/sse2/libi422_yuy2_sse2_plugin.so
+7fab6e7e5000-7fab6e7e6000 r--p 00004000 08:01 4195108                    /usr/lib/vlc/plugins/sse2/libi422_yuy2_sse2_plugin.so
+7fab6e7e6000-7fab6e7e7000 rw-p 00005000 08:01 4195108                    /usr/lib/vlc/plugins/sse2/libi422_yuy2_sse2_plugin.so
+7fab6e7e7000-7fab6e802000 r-xp 00000000 08:01 4195107                    /usr/lib/vlc/plugins/sse2/libi420_rgb_sse2_plugin.so
+7fab6e802000-7fab6ea01000 ---p 0001b000 08:01 4195107                    /usr/lib/vlc/plugins/sse2/libi420_rgb_sse2_plugin.so
+7fab6ea01000-7fab6ea02000 r--p 0001a000 08:01 4195107                    /usr/lib/vlc/plugins/sse2/libi420_rgb_sse2_plugin.so
+7fab6ea02000-7fab6ea03000 rw-p 0001b000 08:01 4195107                    /usr/lib/vlc/plugins/sse2/libi420_rgb_sse2_plugin.so
+7fab6ea03000-7fab6ea48000 r-xp 00000000 08:01 3933259                    /usr/lib/x86_64-linux-gnu/libswscale.so.2.1.1
+7fab6ea48000-7fab6ec48000 ---p 00045000 08:01 3933259                    /usr/lib/x86_64-linux-gnu/libswscale.so.2.1.1
+7fab6ec48000-7fab6ec49000 r--p 00045000 08:01 3933259                    /usr/lib/x86_64-linux-gnu/libswscale.so.2.1.1
+7fab6ec49000-7fab6ec4a000 rw-p 00046000 08:01 3933259                    /usr/lib/x86_64-linux-gnu/libswscale.so.2.1.1
+7fab6ec4a000-7fab6ed00000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6ed00000-7fab6edb6000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6edb6000-7fab6edba000 r-xp 00000000 08:01 4195210                    /usr/lib/vlc/plugins/video_filter/libswscale_plugin.so
+7fab6edba000-7fab6efb9000 ---p 00004000 08:01 4195210                    /usr/lib/vlc/plugins/video_filter/libswscale_plugin.so
+7fab6efb9000-7fab6efba000 r--p 00003000 08:01 4195210                    /usr/lib/vlc/plugins/video_filter/libswscale_plugin.so
+7fab6efba000-7fab6efbb000 rw-p 00004000 08:01 4195210                    /usr/lib/vlc/plugins/video_filter/libswscale_plugin.so
+7fab6efc3000-7fab6f079000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f079000-7fab6f096000 rw-s 00000000 00:04 38011200                   /SYSV00000000 (deleted)
+7fab6f096000-7fab6f0b3000 rw-s 00000000 00:04 37978431                   /SYSV00000000 (deleted)
+7fab6f0b3000-7fab6f0d0000 rw-s 00000000 00:04 37945662                   /SYSV00000000 (deleted)
+7fab6f0d0000-7fab6f0ed000 rw-s 00000000 00:04 37912893                   /SYSV00000000 (deleted)
+7fab6f0ed000-7fab6f10a000 rw-s 00000000 00:04 37880124                   /SYSV00000000 (deleted)
+7fab6f10a000-7fab6f127000 rw-s 00000000 00:04 37847355                   /SYSV00000000 (deleted)
+7fab6f127000-7fab6f1dd000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f1e5000-7fab6f202000 rw-s 00000000 00:04 40567182                   /SYSV00000000 (deleted)
+7fab6f202000-7fab6f21f000 rw-s 00000000 00:04 40534413                   /SYSV00000000 (deleted)
+7fab6f21f000-7fab6f23c000 rw-s 00000000 00:04 40501644                   /SYSV00000000 (deleted)
+7fab6f23c000-7fab6f259000 rw-s 00000000 00:04 40468875                   /SYSV00000000 (deleted)
+7fab6f259000-7fab6f276000 rw-s 00000000 00:04 40436106                   /SYSV00000000 (deleted)
+7fab6f276000-7fab6f293000 rw-s 00000000 00:04 40403337                   /SYSV00000000 (deleted)
+7fab6f293000-7fab6f349000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f349000-7fab6f3ff000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f3ff000-7fab6f4b5000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f4b5000-7fab6f4b8000 r-xp 00000000 08:01 4202961                    /usr/lib/vlc/plugins/mmx/libi420_yuy2_mmx_plugin.so
+7fab6f4b8000-7fab6f6b7000 ---p 00003000 08:01 4202961                    /usr/lib/vlc/plugins/mmx/libi420_yuy2_mmx_plugin.so
+7fab6f6b7000-7fab6f6b8000 r--p 00002000 08:01 4202961                    /usr/lib/vlc/plugins/mmx/libi420_yuy2_mmx_plugin.so
+7fab6f6b8000-7fab6f6b9000 rw-p 00003000 08:01 4202961                    /usr/lib/vlc/plugins/mmx/libi420_yuy2_mmx_plugin.so
+7fab6f6b9000-7fab6f76f000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f76f000-7fab6f825000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f825000-7fab6f8db000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f8db000-7fab6f991000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6f991000-7fab6fa47000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6fa47000-7fab6fafd000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6fafd000-7fab6fbb3000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6fbb3000-7fab6fc69000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6fc69000-7fab6fd1f000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6fd1f000-7fab6fdd5000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6fdd5000-7fab6fe8b000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6fe8b000-7fab6ff41000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6ff41000-7fab6fff7000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab6fff7000-7fab700ad000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab700ad000-7fab70163000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab7016b000-7fab70188000 rw-s 00000000 00:04 35356911                   /SYSV00000000 (deleted)
+7fab70188000-7fab701a5000 rw-s 00000000 00:04 35324135                   /SYSV00000000 (deleted)
+7fab701a5000-7fab701c2000 rw-s 00000000 00:04 35291361                   /SYSV00000000 (deleted)
+7fab701c2000-7fab701df000 rw-s 00000000 00:04 35258592                   /SYSV00000000 (deleted)
+7fab701df000-7fab701fc000 rw-s 00000000 00:04 35225823                   /SYSV00000000 (deleted)
+7fab701fc000-7fab70219000 rw-s 00000000 00:04 35193054                   /SYSV00000000 (deleted)
+7fab70221000-7fab7023e000 rw-s 00000000 00:04 39485805                   /SYSV00000000 (deleted)
+7fab7023e000-7fab7025b000 rw-s 00000000 00:04 39453036                   /SYSV00000000 (deleted)
+7fab7025b000-7fab70278000 rw-s 00000000 00:04 39846264                   /SYSV00000000 (deleted)
+7fab70278000-7fab70295000 rw-s 00000000 00:04 39420267                   /SYSV00000000 (deleted)
+7fab70295000-7fab702b2000 rw-s 00000000 00:04 39387498                   /SYSV00000000 (deleted)
+7fab702b2000-7fab702cf000 rw-s 00000000 00:04 39354729                   /SYSV00000000 (deleted)
+7fab702cf000-7fab70385000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70385000-7fab7043b000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab7043b000-7fab704f1000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab704f1000-7fab705a7000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab705a7000-7fab7065d000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab7065d000-7fab70713000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab7071b000-7fab70738000 rw-s 00000000 00:04 36569364                   /SYSV00000000 (deleted)
+7fab70738000-7fab70755000 rw-s 00000000 00:04 36536595                   /SYSV00000000 (deleted)
+7fab70755000-7fab70772000 rw-s 00000000 00:04 36503826                   /SYSV00000000 (deleted)
+7fab70772000-7fab7078f000 rw-s 00000000 00:04 36274443                   /SYSV00000000 (deleted)
+7fab7078f000-7fab707ac000 rw-s 00000000 00:04 36241674                   /SYSV00000000 (deleted)
+7fab707ac000-7fab707c9000 rw-s 00000000 00:04 36208905                   /SYSV00000000 (deleted)
+7fab707d1000-7fab707ee000 rw-s 00000000 00:04 36471057                   /SYSV00000000 (deleted)
+7fab707ee000-7fab7080b000 rw-s 00000000 00:04 36438288                   /SYSV00000000 (deleted)
+7fab7080b000-7fab70828000 rw-s 00000000 00:04 36405519                   /SYSV00000000 (deleted)
+7fab70828000-7fab70845000 rw-s 00000000 00:04 36372750                   /SYSV00000000 (deleted)
+7fab70845000-7fab70862000 rw-s 00000000 00:04 36339981                   /SYSV00000000 (deleted)
+7fab70862000-7fab7087f000 rw-s 00000000 00:04 36307212                   /SYSV00000000 (deleted)
+7fab7087f000-7fab70935000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70935000-7fab709eb000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab709eb000-7fab70aa1000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70aa1000-7fab70b57000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70b57000-7fab70c0d000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70c0d000-7fab70cc3000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70cc3000-7fab70d79000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70d79000-7fab70e2f000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70e2f000-7fab70ee5000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70ee5000-7fab70f9b000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab70f9b000-7fab71051000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab71051000-7fab71107000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab71107000-7fab711bd000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab711bd000-7fab71273000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab71273000-7fab71329000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab71329000-7fab713df000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab713df000-7fab71495000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab71495000-7fab7154b000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab7154b000-7fab71601000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab71601000-7fab71606000 r-xp 00000000 08:01 4195109                    /usr/lib/vlc/plugins/sse2/libi420_yuy2_sse2_plugin.so
+7fab71606000-7fab71805000 ---p 00005000 08:01 4195109                    /usr/lib/vlc/plugins/sse2/libi420_yuy2_sse2_plugin.so
+7fab71805000-7fab71806000 r--p 00004000 08:01 4195109                    /usr/lib/vlc/plugins/sse2/libi420_yuy2_sse2_plugin.so
+7fab71806000-7fab71807000 rw-p 00005000 08:01 4195109                    /usr/lib/vlc/plugins/sse2/libi420_yuy2_sse2_plugin.so
+7fab71807000-7fab718bd000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab718bd000-7fab718be000 r--s 00000000 08:01 393311                     /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le64.cache-4
+7fab718be000-7fab718c9000 r--s 00000000 08:01 393305                     /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le64.cache-4
+7fab718c9000-7fab718cf000 r--s 00000000 08:01 393291                     /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le64.cache-4
+7fab718cf000-7fab718d0000 r--s 00000000 08:01 393321                     /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le64.cache-4
+7fab718d0000-7fab718d1000 r--s 00000000 08:01 393288                     /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le64.cache-4
+7fab718d1000-7fab718d8000 r--s 00000000 08:01 393308                     /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le64.cache-4
+7fab718d8000-7fab718e3000 r--s 00000000 08:01 403623                     /var/cache/fontconfig/a6354e3ac43af67bd8d7b8e43c34e49f-le64.cache-4
+7fab718e7000-7fab71904000 rw-s 00000000 00:04 32997529                   /SYSV00000000 (deleted)
+7fab71904000-7fab71921000 rw-s 00000000 00:04 32964760                   /SYSV00000000 (deleted)
+7fab71921000-7fab71935000 r--s 00000000 08:01 393286                     /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le64.cache-4
+7fab71950000-7fab7196d000 rw-s 00000000 00:04 32931991                   /SYSV00000000 (deleted)
+7fab7196d000-7fab7198a000 rw-s 00000000 00:04 32899222                   /SYSV00000000 (deleted)
+7fab7198a000-7fab719a7000 rw-s 00000000 00:04 32866453                   /SYSV00000000 (deleted)
+7fab719a7000-7fab719c4000 rw-s 00000000 00:04 32833684                   /SYSV00000000 (deleted)
+7fab719c4000-7fab719c5000 r--s 00000000 08:01 393290                     /var/cache/fontconfig/1ac9eb803944fde146138c791f5cc56a-le64.cache-4
+7fab719dd000-7fab719fa000 rw-s 00000000 00:04 32800915                   /SYSV00000000 (deleted)
+7fab719fa000-7fab71a17000 rw-s 00000000 00:04 32768146                   /SYSV00000000 (deleted)
+7fab71a17000-7fab71a1b000 r--s 00000000 08:01 393294                     /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le64.cache-4
+7fab71a1b000-7fab71a1c000 r--s 00000000 08:01 393318                     /var/cache/fontconfig/dc05db6664285cc2f12bf69c139ae4c3-le64.cache-4
+7fab71a2b000-7fab71a2d000 r--s 00000000 08:01 393302                     /var/cache/fontconfig/767a8244fc0220cfb567a839d0392e0b-le64.cache-4
+7fab71a2e000-7fab71a4b000 rw-s 00000000 00:04 32735377                   /SYSV00000000 (deleted)
+7fab71a4b000-7fab71a50000 r--s 00000000 08:01 393304                     /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le64.cache-4
+7fab71a56000-7fab71a73000 rw-s 00000000 00:04 32702608                   /SYSV00000000 (deleted)
+7fab71a73000-7fab71aae000 r--s 00000000 08:01 403981                     /var/cache/fontconfig/365b55f210c0a22e9a19e35191240f32-le64.cache-4
+7fab71ac4000-7fab71ae1000 rw-s 00000000 00:04 32669839                   /SYSV00000000 (deleted)
+7fab71ae1000-7fab71afe000 rw-s 00000000 00:04 32637070                   /SYSV00000000 (deleted)
+7fab71afe000-7fab71b1b000 rw-s 00000000 00:04 32604301                   /SYSV00000000 (deleted)
+7fab71b1b000-7fab71b38000 rw-s 00000000 00:04 32571532                   /SYSV00000000 (deleted)
+7fab71b38000-7fab71b55000 rw-s 00000000 00:04 32538763                   /SYSV00000000 (deleted)
+7fab71b55000-7fab71c0b000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab71c0b000-7fab71cc1000 r--p 00000000 08:01 5114032                    /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+7fab71cc1000-7fab71cce000 r-xp 00000000 08:01 4332906                    /usr/lib/vlc/plugins/text_renderer/libfreetype_plugin.so
+7fab71cce000-7fab71ece000 ---p 0000d000 08:01 4332906                    /usr/lib/vlc/plugins/text_renderer/libfreetype_plugin.so
+7fab71ece000-7fab71ecf000 r--p 0000d000 08:01 4332906                    /usr/lib/vlc/plugins/text_renderer/libfreetype_plugin.so
+7fab71ecf000-7fab71ed0000 rw-p 0000e000 08:01 4332906                    /usr/lib/vlc/plugins/text_renderer/libfreetype_plugin.so
+7fab71ed0000-7fab71ed3000 ---p 00000000 00:00 0 
+7fab71ed3000-7fab71fd1000 rw-p 00000000 00:00 0                          [stack:20596]
+7fab71fd1000-7fab71fd2000 ---p 00000000 00:00 0 
+7fab71fd2000-7fab727d2000 rw-p 00000000 00:00 0                          [stack:20595]
+7fab727d2000-7fab727d3000 ---p 00000000 00:00 0 
+7fab727d3000-7fab72fd3000 rw-p 00000000 00:00 0                          [stack:20594]
+7fab72fd3000-7fab72fd4000 ---p 00000000 00:00 0 
+7fab72fd4000-7fab737d4000 rw-p 00000000 00:00 0                          [stack:20593]
+7fab737d4000-7fab737d5000 ---p 00000000 00:00 0 
+7fab737d5000-7fab73fd5000 rw-p 00000000 00:00 0                          [stack:20592]
+7fab73fd5000-7fab73fd6000 ---p 00000000 00:00 0 
+7fab73fd6000-7fab740d6000 rw-p 00000000 00:00 0                          [stack:20591]
+7fab740d6000-7fab740d7000 ---p 00000000 00:00 0 
+7fab740d7000-7fab748d7000 rw-p 00000000 00:00 0                          [stack:20590]
+7fab748d7000-7fab748d8000 ---p 00000000 00:00 0 
+7fab748d8000-7fab750d8000 rw-p 00000000 00:00 0                          [stack:20589]
+7fab750d8000-7fab750d9000 ---p 00000000 00:00 0 
+7fab750d9000-7fab758d9000 rw-p 00000000 00:00 0                          [stack:20588]
+7fab758d9000-7fab758da000 ---p 00000000 00:00 0 
+7fab758da000-7fab760da000 rw-p 00000000 00:00 0                          [stack:20587]
+7fab760da000-7fab760dd000 ---p 00000000 00:00 0 
+7fab760dd000-7fab761db000 rw-p 00000000 00:00 0                          [stack:20586]
+7fab761db000-7fab761dc000 ---p 00000000 00:00 0 
+7fab761dc000-7fab769dc000 rw-p 00000000 00:00 0                          [stack:20585]
+7fab769dc000-7fab769dd000 ---p 00000000 00:00 0 
+7fab769dd000-7fab771dd000 rw-p 00000000 00:00 0                          [stack:20584]
+7fab771dd000-7fab771de000 ---p 00000000 00:00 0 
+7fab771de000-7fab779de000 rw-p 00000000 00:00 0                          [stack:20583]
+7fab779de000-7fab779df000 ---p 00000000 00:00 0 
+7fab779df000-7fab781df000 rw-p 00000000 00:00 0                          [stack:20582]
+7fab781df000-7fab781e0000 ---p 00000000 00:00 0 
+7fab781e0000-7fab782e0000 rw-p 00000000 00:00 0                          [stack:20581]
+7fab782e0000-7fab782e1000 ---p 00000000 00:00 0 
+7fab782e1000-7fab78ae1000 rw-p 00000000 00:00 0                          [stack:20580]
+7fab78ae1000-7fab78ae2000 ---p 00000000 00:00 0 
+7fab78ae2000-7fab792e2000 rw-p 00000000 00:00 0                          [stack:20579]
+7fab792e2000-7fab792e3000 ---p 00000000 00:00 0 
+7fab792e3000-7fab79ae3000 rw-p 00000000 00:00 0                          [stack:20578]
+7fab79ae3000-7fab79ae4000 ---p 00000000 00:00 0 
+7fab79ae4000-7fab79be4000 rw-p 00000000 00:00 0                          [stack:20577]
+7fab79be4000-7fab79be5000 ---p 00000000 00:00 0 
+7fab79be5000-7fab7a3e5000 rw-p 00000000 00:00 0                          [stack:20576]
+7fab7a3e5000-7fab7a3e6000 ---p 00000000 00:00 0 
+7fab7a3e6000-7fab7abe6000 rw-p 00000000 00:00 0                          [stack:20575]
+7fab7abe6000-7fab7abe7000 ---p 00000000 00:00 0 
+7fab7abe7000-7fab7b3e7000 rw-p 00000000 00:00 0                          [stack:20574]
+7fab7b3e7000-7fab7b3e8000 ---p 00000000 00:00 0 
+7fab7b3e8000-7fab7bbe8000 rw-p 00000000 00:00 0                          [stack:20573]
+7fab7bbe8000-7fab7bbe9000 ---p 00000000 00:00 0 
+7fab7bbe9000-7fab7c3e9000 rw-p 00000000 00:00 0                          [stack:20572]
+7fab7c3e9000-7fab7c3ea000 ---p 00000000 00:00 0 
+7fab7c3ea000-7fab7c4ea000 rw-p 00000000 00:00 0                          [stack:20571]
+7fab7c4ea000-7fab7c4eb000 ---p 00000000 00:00 0 
+7fab7c4eb000-7fab7cceb000 rw-p 00000000 00:00 0                          [stack:20570]
+7fab7cceb000-7fab7ccec000 ---p 00000000 00:00 0 
+7fab7ccec000-7fab7d4ec000 rw-p 00000000 00:00 0                          [stack:20569]
+7fab7d4ec000-7fab7d4ed000 ---p 00000000 00:00 0 
+7fab7d4ed000-7fab7dced000 rw-p 00000000 00:00 0                          [stack:20568]
+7fab7dced000-7fab7dcee000 ---p 00000000 00:00 0 
+7fab7dcee000-7fab7e4ee000 rw-p 00000000 00:00 0                          [stack:20567]
+7fab7e4ee000-7fab7e4ef000 ---p 00000000 00:00 0 
+7fab7e4ef000-7fab7e5ef000 rw-p 00000000 00:00 0                          [stack:20566]
+7fab7e5ef000-7fab7e5f0000 ---p 00000000 00:00 0 
+7fab7e5f0000-7fab7edf0000 rw-p 00000000 00:00 0                          [stack:20565]
+7fab7edf0000-7fab7edf1000 ---p 00000000 00:00 0 
+7fab7edf1000-7fab7f5f1000 rw-p 00000000 00:00 0                          [stack:20564]
+7fab7f5f1000-7fab7f5f2000 ---p 00000000 00:00 0 
+7fab7f5f2000-7fab7fdf2000 rw-p 00000000 00:00 0                          [stack:20563]
+7fab7fdf2000-7fab7fdf3000 ---p 00000000 00:00 0 
+7fab7fdf3000-7fab805f3000 rw-p 00000000 00:00 0                          [stack:20562]
+7fab805f3000-7fab805f4000 ---p 00000000 00:00 0 
+7fab805f4000-7fab806f4000 rw-p 00000000 00:00 0                          [stack:20561]
+7fab806f4000-7fab806f5000 ---p 00000000 00:00 0 
+7fab806f5000-7fab80ef5000 rw-p 00000000 00:00 0                          [stack:20560]
+7fab80ef5000-7fab80ef6000 ---p 00000000 00:00 0 
+7fab80ef6000-7fab816f6000 rw-p 00000000 00:00 0                          [stack:20559]
+7fab816f6000-7fab816f7000 ---p 00000000 00:00 0 
+7fab816f7000-7fab81ef7000 rw-p 00000000 00:00 0                          [stack:20558]
+7fab81ef7000-7fab81ef8000 ---p 00000000 00:00 0 
+7fab81ef8000-7fab826f8000 rw-p 00000000 00:00 0                          [stack:20557]
+7fab826f8000-7fab826f9000 ---p 00000000 00:00 0 
+7fab826f9000-7fab827f9000 rw-p 00000000 00:00 0                          [stack:20556]
+7fab827f9000-7fab827fa000 ---p 00000000 00:00 0 
+7fab827fa000-7fab82ffa000 rw-p 00000000 00:00 0                          [stack:20555]
+7fab82ffa000-7fab82ffb000 ---p 00000000 00:00 0 
+7fab82ffb000-7fab837fb000 rw-p 00000000 00:00 0                          [stack:20554]
+7fab837fb000-7fab837fc000 ---p 00000000 00:00 0 
+7fab837fc000-7fab83ffc000 rw-p 00000000 00:00 0                          [stack:20553]
+7fab83ffc000-7fab83ffd000 ---p 00000000 00:00 0 
+7fab83ffd000-7fab847fd000 rw-p 00000000 00:00 0                          [stack:20552]
+7fab847fd000-7fab84800000 ---p 00000000 00:00 0 
+7fab84800000-7fab848fe000 rw-p 00000000 00:00 0                          [stack:20551]
+7fab848fe000-7fab848ff000 ---p 00000000 00:00 0 
+7fab848ff000-7fab850ff000 rw-p 00000000 00:00 0                          [stack:20550]
+7fab850ff000-7fab85100000 ---p 00000000 00:00 0 
+7fab85100000-7fab85900000 rw-p 00000000 00:00 0                          [stack:20549]
+7fab85900000-7fab85901000 ---p 00000000 00:00 0 
+7fab85901000-7fab86101000 rw-p 00000000 00:00 0                          [stack:20548]
+7fab86101000-7fab86102000 ---p 00000000 00:00 0 
+7fab86102000-7fab86902000 rw-p 00000000 00:00 0                          [stack:20547]
+7fab86902000-7fab86903000 ---p 00000000 00:00 0 
+7fab86903000-7fab86a03000 rw-p 00000000 00:00 0                          [stack:20546]
+7fab86a03000-7fab86a04000 ---p 00000000 00:00 0 
+7fab86a04000-7fab87204000 rw-p 00000000 00:00 0                          [stack:20545]
+7fab87204000-7fab87205000 ---p 00000000 00:00 0 
+7fab87205000-7fab87a05000 rw-p 00000000 00:00 0                          [stack:20544]
+7fab87a05000-7fab87a06000 ---p 00000000 00:00 0 
+7fab87a06000-7fab88206000 rw-p 00000000 00:00 0                          [stack:20543]
+7fab88206000-7fab88207000 ---p 00000000 00:00 0 
+7fab88207000-7fab88a07000 rw-p 00000000 00:00 0                          [stack:20542]
+7fab88a07000-7fab88a08000 ---p 00000000 00:00 0 
+7fab88a08000-7fab88b08000 rw-p 00000000 00:00 0                          [stack:20541]
+7fab88b08000-7fab88b09000 ---p 00000000 00:00 0 
+7fab88b09000-7fab89309000 rw-p 00000000 00:00 0                          [stack:20540]
+7fab89309000-7fab8930a000 ---p 00000000 00:00 0 
+7fab8930a000-7fab89b0a000 rw-p 00000000 00:00 0                          [stack:20539]
+7fab89b0a000-7fab89b0b000 ---p 00000000 00:00 0 
+7fab89b0b000-7fab8a30b000 rw-p 00000000 00:00 0                          [stack:20538]
+7fab8a30b000-7fab8a30c000 ---p 00000000 00:00 0 
+7fab8a30c000-7fab8ab0c000 rw-p 00000000 00:00 0                          [stack:20537]
+7fab8ab0c000-7fab8ab0f000 ---p 00000000 00:00 0 
+7fab8ab0f000-7fab8ac0d000 rw-p 00000000 00:00 0                          [stack:20536]
+7fab8ac0d000-7fab8ac0e000 ---p 00000000 00:00 0 
+7fab8ac0e000-7fab8ad0e000 rw-p 00000000 00:00 0                          [stack:20535]
+7fab8ad0e000-7fab8ad0f000 ---p 00000000 00:00 0 
+7fab8ad0f000-7fab8ae0f000 rw-p 00000000 00:00 0                          [stack:20534]
+7fab8ae0f000-7fab8ae10000 ---p 00000000 00:00 0 
+7fab8ae10000-7fab8b610000 rw-p 00000000 00:00 0                          [stack:20533]
+7fab8b610000-7fab8b611000 ---p 00000000 00:00 0 
+7fab8b611000-7fab8be11000 rw-p 00000000 00:00 0                          [stack:20532]
+7fab8be11000-7fab8be12000 ---p 00000000 00:00 0 
+7fab8be12000-7fab8c612000 rw-p 00000000 00:00 0                          [stack:20531]
+7fab8c612000-7fab8c613000 ---p 00000000 00:00 0 
+7fab8c613000-7fab8ce13000 rw-p 00000000 00:00 0                          [stack:20529]
+7fab8ce13000-7fab8ce14000 ---p 00000000 00:00 0 
+7fab8ce14000-7fab8cf14000 rw-p 00000000 00:00 0                          [stack:20530]
+7fab8cf14000-7fab8cf15000 ---p 00000000 00:00 0 
+7fab8cf15000-7fab8d715000 rw-p 00000000 00:00 0                          [stack:20528]
+7fab8d715000-7fab8d716000 ---p 00000000 00:00 0 
+7fab8d716000-7fab8df16000 rw-p 00000000 00:00 0                          [stack:20527]
+7fab8df16000-7fab8df17000 ---p 00000000 00:00 0 
+7fab8df17000-7fab8e717000 rw-p 00000000 00:00 0                          [stack:20526]
+7fab8e717000-7fab8e718000 ---p 00000000 00:00 0 
+7fab8e718000-7fab8ef18000 rw-p 00000000 00:00 0                          [stack:20524]
+7fab8ef18000-7fab8ef1b000 ---p 00000000 00:00 0 
+7fab8ef1b000-7fab8f019000 rw-p 00000000 00:00 0                          [stack:20525]
+7fab8f019000-7fab8f01a000 ---p 00000000 00:00 0 
+7fab8f01a000-7fab8f81a000 rw-p 00000000 00:00 0                          [stack:20523]
+7fab8f81a000-7fab8f81b000 ---p 00000000 00:00 0 
+7fab8f81b000-7fab9001b000 rw-p 00000000 00:00 0                          [stack:20522]
+7fab9001b000-7fab9001c000 ---p 00000000 00:00 0 
+7fab9001c000-7fab9081c000 rw-p 00000000 00:00 0                          [stack:20521]
+7fab9081c000-7fab9081d000 ---p 00000000 00:00 0 
+7fab9081d000-7fab9101d000 rw-p 00000000 00:00 0                          [stack:20520]
+7fab9101d000-7fab9101e000 ---p 00000000 00:00 0 
+7fab9101e000-7fab9111e000 rw-p 00000000 00:00 0                          [stack:20519]
+7fab9111e000-7fab9111f000 ---p 00000000 00:00 0 
+7fab9111f000-7fab9191f000 rw-p 00000000 00:00 0                          [stack:20518]
+7fab9191f000-7fab91920000 ---p 00000000 00:00 0 
+7fab91920000-7fab92120000 rw-p 00000000 00:00 0                          [stack:20517]
+7fab92120000-7fab92121000 ---p 00000000 00:00 0 
+7fab92121000-7fab92921000 rw-p 00000000 00:00 0                          [stack:20516]
+7fab92921000-7fab92922000 ---p 00000000 00:00 0 
+7fab92922000-7fab93122000 rw-p 00000000 00:00 0                          [stack:20515]
+7fab93122000-7fab93123000 ---p 00000000 00:00 0 
+7fab93123000-7fab93223000 rw-p 00000000 00:00 0                          [stack:20514]
+7fab93223000-7fab93224000 ---p 00000000 00:00 0 
+7fab93224000-7fab93a24000 rw-p 00000000 00:00 0                          [stack:20513]
+7fab93a24000-7fab93a25000 ---p 00000000 00:00 0 
+7fab93a25000-7fab94225000 rw-p 00000000 00:00 0                          [stack:20512]
+7fab94225000-7fab94226000 ---p 00000000 00:00 0 
+7fab94226000-7fab94a26000 rw-p 00000000 00:00 0                          [stack:20511]
+7fab94a26000-7fab94a27000 ---p 00000000 00:00 0 
+7fab94a27000-7fab95227000 rw-p 00000000 00:00 0                          [stack:20510]
+7fab95227000-7fab95228000 ---p 00000000 00:00 0 
+7fab95228000-7fab95328000 rw-p 00000000 00:00 0                          [stack:20509]
+7fab95328000-7fab95329000 ---p 00000000 00:00 0 
+7fab95329000-7fab95b29000 rw-p 00000000 00:00 0                          [stack:20508]
+7fab95b29000-7fab95b2a000 ---p 00000000 00:00 0 
+7fab95b2a000-7fab9632a000 rw-p 00000000 00:00 0                          [stack:20507]
+7fab9632a000-7fab9632b000 ---p 00000000 00:00 0 
+7fab9632b000-7fab96b2b000 rw-p 00000000 00:00 0                          [stack:20506]
+7fab96b2b000-7fab96b2c000 ---p 00000000 00:00 0 
+7fab96b2c000-7fab9732c000 rw-p 00000000 00:00 0                          [stack:20505]
+7fab9732c000-7fab9732f000 ---p 00000000 00:00 0 
+7fab9732f000-7fab9742d000 rw-p 00000000 00:00 0                          [stack:20504]
+7fab9742d000-7fab9742e000 ---p 00000000 00:00 0 
+7fab9742e000-7fab97c2e000 rw-p 00000000 00:00 0                          [stack:20503]
+7fab97c2e000-7fab97c2f000 ---p 00000000 00:00 0 
+7fab97c2f000-7fab9842f000 rw-p 00000000 00:00 0                          [stack:20502]
+7fab9842f000-7fab98430000 ---p 00000000 00:00 0 
+7fab98430000-7fab98c30000 rw-p 00000000 00:00 0                          [stack:20501]
+7fab98c30000-7fab98c31000 ---p 00000000 00:00 0 
+7fab98c31000-7fab99431000 rw-p 00000000 00:00 0                          [stack:20500]
+7fab99431000-7fab99432000 ---p 00000000 00:00 0 
+7fab99432000-7fab99532000 rw-p 00000000 00:00 0                          [stack:20499]
+7fab99532000-7fab99533000 ---p 00000000 00:00 0 
+7fab99533000-7fab99d33000 rw-p 00000000 00:00 0                          [stack:20498]
+7fab99d33000-7fab99d34000 ---p 00000000 00:00 0 
+7fab99d34000-7fab9a534000 rw-p 00000000 00:00 0                          [stack:20497]
+7fab9a534000-7fab9a535000 ---p 00000000 00:00 0 
+7fab9a535000-7fab9ad35000 rw-p 00000000 00:00 0                          [stack:20496]
+7fab9ad35000-7fab9ad36000 ---p 00000000 00:00 0 
+7fab9ad36000-7fab9b536000 rw-p 00000000 00:00 0                          [stack:20495]
+7fab9b536000-7fab9b537000 ---p 00000000 00:00 0 
+7fab9b537000-7fab9b637000 rw-p 00000000 00:00 0                          [stack:20494]
+7fab9b637000-7fab9b638000 ---p 00000000 00:00 0 
+7fab9b638000-7fab9be38000 rw-p 00000000 00:00 0                          [stack:20493]
+7fab9be38000-7fab9be39000 ---p 00000000 00:00 0 
+7fab9be39000-7fab9c639000 rw-p 00000000 00:00 0                          [stack:20492]
+7fab9c639000-7fab9c63a000 ---p 00000000 00:00 0 
+7fab9c63a000-7fab9ce3a000 rw-p 00000000 00:00 0                          [stack:20491]
+7fab9ce3a000-7fab9ce3d000 ---p 00000000 00:00 0 
+7fab9ce3d000-7fab9cf3b000 rw-p 00000000 00:00 0                          [stack:20490]
+7fab9cf3b000-7fab9cf3e000 ---p 00000000 00:00 0 
+7fab9cf3e000-7fab9d03c000 rw-p 00000000 00:00 0                          [stack:20489]
+7fab9d03c000-7fab9d03d000 ---p 00000000 00:00 0 
+7fab9d03d000-7fab9d83d000 rw-p 00000000 00:00 0                          [stack:20488]
+7fab9d83d000-7fab9d840000 ---p 00000000 00:00 0 
+7fab9d840000-7fab9d93e000 rw-p 00000000 00:00 0                          [stack:20487]
+7fab9d93e000-7fab9d93f000 ---p 00000000 00:00 0 
+7fab9d93f000-7fab9da3f000 rw-p 00000000 00:00 0                          [stack:20486]
+7fab9da3f000-7fab9da40000 ---p 00000000 00:00 0 
+7fab9da40000-7fab9db40000 rw-p 00000000 00:00 0                          [stack:20485]
+7fab9db40000-7fab9db41000 ---p 00000000 00:00 0 
+7fab9db41000-7fab9e341000 rw-p 00000000 00:00 0                          [stack:20484]
+7fab9e341000-7fab9e344000 ---p 00000000 00:00 0 
+7fab9e344000-7fab9e442000 rw-p 00000000 00:00 0                          [stack:20483]
+7fab9e442000-7fab9e443000 ---p 00000000 00:00 0 
+7fab9e443000-7fab9ec43000 rw-p 00000000 00:00 0                          [stack:20482]
+7fab9ec43000-7fab9ec44000 ---p 00000000 00:00 0 
+7fab9ec44000-7fab9f444000 rw-p 00000000 00:00 0                          [stack:20481]
+7fab9f444000-7fab9f445000 ---p 00000000 00:00 0 
+7fab9f445000-7fab9fc45000 rw-p 00000000 00:00 0                          [stack:20480]
+7fab9fc45000-7fab9fc46000 ---p 00000000 00:00 0 
+7fab9fc46000-7fab9fd46000 rw-p 00000000 00:00 0                          [stack:20478]
+7fab9fd46000-7fab9fd47000 ---p 00000000 00:00 0 
+7fab9fd47000-7faba0547000 rw-p 00000000 00:00 0                          [stack:20477]
+7faba0547000-7faba0548000 ---p 00000000 00:00 0 
+7faba0548000-7faba0d48000 rw-p 00000000 00:00 0                          [stack:20476]
+7faba0d48000-7faba0d49000 ---p 00000000 00:00 0 
+7faba0d49000-7faba1549000 rw-p 00000000 00:00 0                          [stack:20475]
+7faba1549000-7faba154a000 ---p 00000000 00:00 0 
+7faba154a000-7faba164a000 rw-p 00000000 00:00 0                          [stack:20474]
+7faba164a000-7faba164b000 ---p 00000000 00:00 0 
+7faba164b000-7faba1e4b000 rw-p 00000000 00:00 0                          [stack:20473]
+7faba1e4b000-7faba1e4e000 ---p 00000000 00:00 0 
+7faba1e4e000-7faba1f4c000 rw-p 00000000 00:00 0                          [stack:20472]
+7faba1f4c000-7faba1f4f000 ---p 00000000 00:00 0 
+7faba1f4f000-7faba204d000 rw-p 00000000 00:00 0                          [stack:20471]
+7faba204d000-7faba204e000 ---p 00000000 00:00 0 
+7faba204e000-7faba214e000 rw-p 00000000 00:00 0                          [stack:20470]
+7faba214e000-7faba214f000 ---p 00000000 00:00 0 
+7faba214f000-7faba294f000 rw-p 00000000 00:00 0                          [stack:20469]
+7faba294f000-7faba2950000 ---p 00000000 00:00 0 
+7faba2950000-7faba3150000 rw-p 00000000 00:00 0                          [stack:20468]
+7faba3150000-7faba3151000 ---p 0

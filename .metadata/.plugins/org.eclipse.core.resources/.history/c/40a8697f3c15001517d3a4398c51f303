@@ -1,0 +1,57 @@
+package cctv.zoneminder.client;
+
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+import javax.swing.JFrame;
+
+import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
+
+public class VideoPersonalFrame extends JFrame{
+
+	
+	public VideoPersonalFrame(final EmbeddedMediaPlayerComponent media) {
+		setSize(500,500);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		EmbeddedMediaPlayerComponent temp = media;
+		add(temp);
+		addWindowListener(new WindowListener() {
+			
+			public void windowOpened(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void windowIconified(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void windowDeiconified(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void windowDeactivated(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void windowClosing(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				media.getMediaPlayer().stop();
+			}
+			
+			public void windowClosed(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void windowActivated(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+	
+}

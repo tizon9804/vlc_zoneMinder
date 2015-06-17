@@ -1,0 +1,5 @@
+package cctv.zoneminder.client;
+
+public class videoPersonalFrame {
+
+}
