@@ -1,12 +1,24 @@
 package cctv.zoneminder.client;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.crypto.spec.DESedeKeySpec;
 import javax.swing.JOptionPane;
 
-public class Main {
+public class Main implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 917005948119571357L;
 	private static final String ERRORNUMERORANGO = "Ingrese un Puerto válido";
+	private static final String ERRORDEPERSISTENCIA = "No hay Archivo de configuración, se va a cargar por default Zoneminder";
 	private String ip;
 	private int puerto;
 	private String ruta;
@@ -115,13 +127,67 @@ public class Main {
 
 		return camaras;
 	}
+	
+	public void serializar(Interfaz interfaz){
+		try
+	      {
+	         FileOutputStream fileOut = new FileOutputStream("./zoneminder.ser");
+	         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+	         out.writeObject(this);
+	         out.close();
+	         fileOut.close();
+	         System.out.printf("Archivo guardado satisfactoriamente en ./zoneminder.ser");
+	      }catch(IOException i)
+	      {
+	          i.printStackTrace();
+	          JOptionPane.showMessageDialog(interfaz, "Error al guardar.");
+	      }
+	}
+	
+	public static Main deserializar(){
+		try
+	      {  Main main=null;
+	         FileInputStream fileIn = new FileInputStream("./zoneminder.ser");
+	         ObjectInputStream in = new ObjectInputStream(fileIn);
+	         main = (Main) in.readObject();
+	         in.close();
+	         fileIn.close();
+	         return main;
+	      }catch(IOException i)
+	      {
+	         i.printStackTrace();
+	         System.out.println(ERRORDEPERSISTENCIA);
+	         return null;
+	      }catch(ClassNotFoundException c)
+	      {
+	         System.out.println(ERRORDEPERSISTENCIA);
+	         c.printStackTrace();
+	         return null ;
+	      }
+	}
 
 	public static void main(String[] args) {
-		Main main = new Main();
+		Main main = deserializar() ;
+		boolean persistencia=true;
+		if(main==null){
+			main=new Main();
+			persistencia=false;
+		}
 		Interfaz interfaz = new Interfaz(main);
+		if(!persistencia){
+			JOptionPane.showMessageDialog(interfaz, ERRORDEPERSISTENCIA);
+		}
 		interfaz.setVisible(true);
 		PanelControl control = new PanelControl(interfaz);
 		control.setVisible(true);
+	}
+
+	public ArrayList<Camara> getCamaras() {
+		return camaras;
+	}
+
+	public void setCamaras(ArrayList<Camara> camaras) {
+		this.camaras = camaras;
 	}
 
 	public String getRuta() {

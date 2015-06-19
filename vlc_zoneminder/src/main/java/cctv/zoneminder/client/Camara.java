@@ -1,8 +1,10 @@
 package cctv.zoneminder.client;
 
+import java.io.Serializable;
 
 
-public class Camara {
+
+public class Camara implements Serializable {
 	
 	private int puerto;
 	private String ip;	

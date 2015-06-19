@@ -30,7 +30,7 @@ public class Interfaz extends JFrame {
 	    reproductor= new PanelReproductor();		
 		// Registro de paneles				
 		add(reproductor,BorderLayout.CENTER);
-		camaras = new ArrayList<Camara>();
+		camaras = main.getCamaras();
 		
 		addWindowListener(new WindowListener() {
 		
@@ -86,6 +86,7 @@ public class Interfaz extends JFrame {
 	public void onDispose(){		
 		super.dispose();	
 		reproductor.closeAll();	
+		main.serializar(this);
 		System.exit(0);
 	}
 

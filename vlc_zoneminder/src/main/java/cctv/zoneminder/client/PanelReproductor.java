@@ -68,7 +68,12 @@ public class PanelReproductor extends JPanel {
 		System.out.println("reproduciendo camara "+ ruta);
 		camera.getMediaPlayer().playMedia(c.getRuta());
 		camera.getMediaPlayer().setEnableMouseInputHandling(true);
-		 
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		camera.getVideoSurface().addMouseListener(new MouseListener() {
 			
 			
