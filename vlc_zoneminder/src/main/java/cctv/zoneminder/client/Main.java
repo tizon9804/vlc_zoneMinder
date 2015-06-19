@@ -1,6 +1,7 @@
 package cctv.zoneminder.client;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -19,16 +20,20 @@ public class Main implements Serializable {
 	private static final long serialVersionUID = 917005948119571357L;
 	private static final String ERRORNUMERORANGO = "Ingrese un Puerto válido";
 	private static final String ERRORDEPERSISTENCIA = "No hay Archivo de configuración, se va a cargar por default Zoneminder";
+	private static final String RUTASER = "./zoneminder";
+	private static FileInputStream fileIn;
 	private String ip;
 	private int puerto;
 	private String ruta;
 	private ArrayList<Camara> camaras;
+	private String rutaserializacion;
 
-	public Main() {
+	public Main(String rutaser) {
 		ip = "239.0.10.1";
 		puerto = 5451;
 		ruta="rtp://@"+ip+":"+puerto;
 		camaras = new ArrayList<Camara>();
+		rutaserializacion=rutaser;
 	}
 
 	public ArrayList<Camara> crearCamaras(Interfaz interfaz, String ip,String rango){
@@ -127,50 +132,67 @@ public class Main implements Serializable {
 
 		return camaras;
 	}
-	
+
 	public void serializar(Interfaz interfaz){
 		try
-	      {
-	         FileOutputStream fileOut = new FileOutputStream("./zoneminder.ser");
-	         ObjectOutputStream out = new ObjectOutputStream(fileOut);
-	         out.writeObject(this);
-	         out.close();
-	         fileOut.close();
-	         System.out.printf("Archivo guardado satisfactoriamente en ./zoneminder.ser");
-	      }catch(IOException i)
-	      {
-	          i.printStackTrace();
-	          JOptionPane.showMessageDialog(interfaz, "Error al guardar.");
-	      }
+		{
+			FileOutputStream fileOut = new FileOutputStream(rutaserializacion);
+			ObjectOutputStream out = new ObjectOutputStream(fileOut);
+			out.writeObject(this);
+			out.close();
+			fileOut.close();
+			System.out.printf("Archivo guardado satisfactoriamente en "+ rutaserializacion);
+		}catch(IOException i)
+		{
+			i.printStackTrace();
+			JOptionPane.showMessageDialog(interfaz, "Error al guardar.");
+		}
 	}
-	
-	public static Main deserializar(){
+
+	public static Main deserializar(FileInputStream file){
 		try
-	      {  Main main=null;
-	         FileInputStream fileIn = new FileInputStream("./zoneminder.ser");
-	         ObjectInputStream in = new ObjectInputStream(fileIn);
-	         main = (Main) in.readObject();
-	         in.close();
-	         fileIn.close();
-	         return main;
-	      }catch(IOException i)
-	      {
-	         i.printStackTrace();
-	         System.out.println(ERRORDEPERSISTENCIA);
-	         return null;
-	      }catch(ClassNotFoundException c)
-	      {
-	         System.out.println(ERRORDEPERSISTENCIA);
-	         c.printStackTrace();
-	         return null ;
-	      }
+		{  Main main=null;
+		if (file==null){
+			fileIn = new FileInputStream(RUTASER);
+		}
+		else{
+			fileIn=file;
+		}
+		ObjectInputStream in = new ObjectInputStream(fileIn);
+		main = (Main) in.readObject();
+		in.close();
+		fileIn.close();
+		return main;
+		}catch(IOException i)
+		{
+			i.printStackTrace();
+			System.out.println(ERRORDEPERSISTENCIA);
+			return null;
+		}catch(ClassNotFoundException c)
+		{
+			System.out.println(ERRORDEPERSISTENCIA);
+			c.printStackTrace();
+			return null ;
+		}
 	}
 
 	public static void main(String[] args) {
-		Main main = deserializar() ;
+		String rutaser=RUTASER;
+		if(args.length==1){
+			try {
+				fileIn = new FileInputStream(args[0]);
+				rutaser=args[0];
+				System.out.println("se cargo parametro de configuracion por consola");
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				fileIn=null;
+			}
+		}
+		Main main = deserializar(fileIn) ;
 		boolean persistencia=true;
 		if(main==null){
-			main=new Main();
+			main=new Main(rutaser);
 			persistencia=false;
 		}
 		Interfaz interfaz = new Interfaz(main);
@@ -198,6 +220,6 @@ public class Main implements Serializable {
 		this.ruta = ruta;
 	}
 
-	
+
 
 }
