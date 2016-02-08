@@ -12,9 +12,6 @@ import javax.swing.JFrame;
 import com.sun.jna.platform.unix.X11.Window;
 
 public class Interfaz extends JFrame {
-
-
-
 	private Main main;
 	private PanelReproductor reproductor;
 	private ArrayList<Camara> camaras;
@@ -27,62 +24,62 @@ public class Interfaz extends JFrame {
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		//inicializacion de paneles				
-	    reproductor= new PanelReproductor();		
+		reproductor= new PanelReproductor();		
 		// Registro de paneles				
 		add(reproductor,BorderLayout.CENTER);
 		camaras = main.getCamaras();
-		
+
 		addWindowListener(new WindowListener() {
-		
-			
+
+
 			public void windowClosing(WindowEvent e) {
 				onDispose();
-				
+
 			}
 
 			public void windowActivated(WindowEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			public void windowClosed(WindowEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			public void windowDeactivated(WindowEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			public void windowDeiconified(WindowEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			public void windowIconified(WindowEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			public void windowOpened(WindowEvent e) {
 				// TODO Auto-generated method stub
-				
+
 			}
-		
+
 		});
-		
+
 	}
-	
+
 	public void reproducir(ArrayList<Camara> camaras){
-		try{
-		reproductor.run(camaras);
+		try {
+			reproductor.run(camaras);
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void onDispose(){		
 		super.dispose();	
 		reproductor.closeAll();	
@@ -90,11 +87,9 @@ public class Interfaz extends JFrame {
 		System.exit(0);
 	}
 
-
-
 	public void agregarCamaras(String ip, String rango) {
 		setCamaras(main.crearCamaras(this,ip, rango));
-		
+
 	}
 
 	public ArrayList<Camara> getCamaras() {
@@ -106,6 +101,6 @@ public class Interfaz extends JFrame {
 	}
 
 
-	
-	
+
+
 }

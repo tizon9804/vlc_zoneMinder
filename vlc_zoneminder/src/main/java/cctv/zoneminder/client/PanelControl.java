@@ -20,51 +20,53 @@ import javax.swing.JPasswordField;
 
 public class PanelControl extends JFrame {
 
-	
 	protected static final String CLAVE = "ubung";
+	
+	private Interfaz interfaz;
+	
 	private JButton enviar_button;
 	private JButton reproducir;
-	private Interfaz interfaz;
 	private TextField textIp;
 	private Label labelIP;
 	private TextField textRango;
 	private Label labelRango;
 	private JPasswordField password;
-	private Label labelPass;
-	
+	private Label labelPass;	
 
 	public PanelControl(Interfaz interfazp) {
-		this.interfaz = interfazp;			
+		interfaz = interfazp;			
 		setBackground(Color.black);
 		setForeground(Color.green);	
 		setLayout(new GridLayout(4,1));
 		setSize(400, 500);		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setLocationRelativeTo(interfaz);
+		setLocationRelativeTo(this.interfaz);
+		
 		JPanel forma = new JPanel();
 		forma.setSize(200,400);
 		forma.setLayout(new GridLayout(6,2));	
 		forma.setBackground(Color.black);
 		forma.setForeground(Color.green);
-		textIp = new TextField("239.0.10.1");		
-		labelIP = new Label("Ip Multicast:");
-		textRango = new TextField("5448-5452");
-		labelRango = new Label("Rango Camaras:");
-		password = new JPasswordField();		
-		labelPass = new Label("Contraseña: ");		
-		textIp.setSize(200, 50);
 		
+		labelIP = new Label("DVR Host:");
+		textIp = new TextField("http://dvr222");		
+		
+		labelRango = new Label("Rango Camaras:");
+		textRango = new TextField("1-10,34-49");
+		
+		labelPass = new Label("Contraseña: ");
+		password = new JPasswordField();		
+				
+		textIp.setSize(200, 50);
 		password.addActionListener(new ActionListener() {
 			
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {				
 				if(password.getText().equals(CLAVE)){
 					enviar_button.setEnabled(true);
-				}
-				else{
+				} else{
 					enviar_button.setEnabled(false);
 				}
-				
 			}
 		});
 		//#################################################
@@ -105,6 +107,7 @@ public class PanelControl extends JFrame {
 				
 			}
 		});
+		
 		enviar_button.addActionListener(new ActionListener() { 
 			
 			public void actionPerformed(ActionEvent arg0) {		
@@ -120,7 +123,6 @@ public class PanelControl extends JFrame {
 		reproducir.setSelected(true);	
 		reproducir.setBorderPainted(false);		
 		reproducir.addMouseListener(new MouseListener() {
-
 			
 			public void mouseExited(MouseEvent e) {
 				reproducir.setBackground(Color.BLACK);

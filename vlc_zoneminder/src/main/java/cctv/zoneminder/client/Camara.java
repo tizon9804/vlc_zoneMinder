@@ -2,39 +2,26 @@ package cctv.zoneminder.client;
 
 import java.io.Serializable;
 
-
-
 public class Camara implements Serializable {
 	
-	private int puerto;
-	private String ip;	
-	private String ruta;
+	private static final String ZM_PATH = "/zm/cgi-bin/nph-zms?mode=mpeg&format=asf&monitor=";
+	private static final String ZM_AUTH = "&user=streaming&pass=9jHdjIyKT0Sh184Hy36Yqah";
 	
-	public Camara(int port,String ip,String ruta) {
-		
-		this.puerto=port;
-		this.ip=ip;
-		this.setRuta(ruta);
-	}
-	
-	public int getPuerto() {
-		return puerto;
-	}
-	public void setPuerto(int puerto) {
-		this.puerto = puerto;
-	}
-	public String getIp() {
-		return ip;
-	}
-	public void setIp(String ip) {
-		this.ip = ip;
-	}
-	public String getRuta() {
-		return ruta;
-	}
+	private static final long serialVersionUID = 774648931592861756L;	
 
-	public void setRuta(String ruta) {
-		this.ruta = ruta;
+	private String path;
+	private int monitor;
+	
+	public Camara(String host, int monitor) {
+		this.monitor = monitor;
+		this.path = host + ZM_PATH + this.monitor + ZM_AUTH;
 	}
 	
+	public String getPath() {
+		return this.path;
+	}
+	
+	public int getMonitor() {
+		return this.monitor;
+	}
 }

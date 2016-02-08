@@ -14,29 +14,21 @@ import javax.swing.JOptionPane;
 
 public class Main implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 917005948119571357L;
 	private static final String ERRORNUMERORANGO = "Ingrese un Puerto válido";
 	private static final String ERRORDEPERSISTENCIA = "No hay Archivo de configuración, se va a cargar por default Zoneminder";
 	private static final String RUTASER = "./zoneminder";
 	private static FileInputStream fileIn;
-	private String ip;
-	private int puerto;
-	private String ruta;
+	
 	private ArrayList<Camara> camaras;
 	private String rutaserializacion;
 
 	public Main(String rutaser) {
-		ip = "239.0.10.1";
-		puerto = 5451;
-		ruta="rtp://@"+ip+":"+puerto;
 		camaras = new ArrayList<Camara>();
 		rutaserializacion=rutaser;
 	}
 
-	public ArrayList<Camara> crearCamaras(Interfaz interfaz, String ip,String rango){
+	public ArrayList<Camara> crearCamaras(Interfaz interfaz, String host, String rango){
 
 		if(rango.contains(",")){
 			String[] rangos = rango.split(",");
@@ -50,11 +42,9 @@ public class Main implements Serializable {
 							int max=Integer.parseInt(rangosNivel2[1]);
 							if(min<max){
 								for (int j = min; j <= max; j++) {	
-									int port=j;
-									String ruta="rtp://@"+ip+":"+port;
-									Camara c= new Camara(port, ip, ruta);
+									int monitor=j;
+									Camara c= new Camara(host, monitor);
 									camaras.add(c);
-
 								}
 							}	
 
@@ -72,43 +62,35 @@ public class Main implements Serializable {
 						JOptionPane.showMessageDialog(interfaz,ERRORNUMERORANGO);
 						return camaras;
 					}
-				}			
-				else{
+				} else {
 					try{
-						int port=Integer.parseInt(range);
-						String ruta="rtp://@"+ip+":"+port;
-						Camara c= new Camara(port, ip, ruta);
+						int monitor = Integer.parseInt(range);
+						Camara c= new Camara(host, monitor);
 						camaras.add(c);
-					}
-					catch(Exception e){
+					} catch(Exception e){
 						JOptionPane.showMessageDialog(interfaz,ERRORNUMERORANGO);
 					}
 				}
-
 			}
-		}
-		else if (rango.contains("-")){
-			try{
+		} else if (rango.contains("-")){
+			try {
 				String[] rangosNivel2= rango.split("-");
 				if(rangosNivel2.length==2){
 					int min=Integer.parseInt(rangosNivel2[0]);
 					int max=Integer.parseInt(rangosNivel2[1]);
 					if(min<max){
 						for (int j = min; j <= max; j++) {		
-							int port=j;
-							String ruta="rtp://@"+ip+":"+port;
-							Camara c= new Camara(port, ip, ruta);
+							int monitor=j;
+							Camara c= new Camara(host, monitor);
 							camaras.add(c);
-
 						}
 					}	
 
-					else{
+					else {
 						JOptionPane.showMessageDialog(interfaz,ERRORNUMERORANGO);
 						return camaras;
 					}
-				}
-				else{
+				} else {
 					JOptionPane.showMessageDialog(interfaz,ERRORNUMERORANGO);
 					return camaras;
 				}
@@ -117,15 +99,12 @@ public class Main implements Serializable {
 				JOptionPane.showMessageDialog(interfaz,ERRORNUMERORANGO);
 				return camaras;
 			}
-		}	
-		else{
-			try{
-				int port=Integer.parseInt(rango);
-				String ruta="rtp://@"+ip+":"+port;
-				Camara c= new Camara(port, ip, ruta);
+		} else {
+			try {
+				int monitor = Integer.parseInt(rango);
+				Camara c= new Camara(host, monitor);
 				camaras.add(c);
-			}
-			catch(Exception e){
+			} catch(Exception e){
 				JOptionPane.showMessageDialog(interfaz,ERRORNUMERORANGO);
 			}
 		}
@@ -150,51 +129,47 @@ public class Main implements Serializable {
 	}
 
 	public static Main deserializar(FileInputStream file){
-		try
-		{  Main main=null;
-		if (file==null){
-			fileIn = new FileInputStream(RUTASER);
-		}
-		else{
-			fileIn=file;
-		}
-		ObjectInputStream in = new ObjectInputStream(fileIn);
-		main = (Main) in.readObject();
-		in.close();
-		fileIn.close();
-		return main;
-		}catch(IOException i)
-		{
+		Main main = null;
+		
+		try {  
+			fileIn = file == null ? new FileInputStream(RUTASER) : file;
+		
+			ObjectInputStream in = new ObjectInputStream(fileIn);
+			main = (Main) in.readObject();
+			
+			in.close();
+			fileIn.close();	
+		} catch(IOException i) {
 			i.printStackTrace();
 			System.out.println(ERRORDEPERSISTENCIA);
-			return null;
-		}catch(ClassNotFoundException c)
-		{
+		} catch(ClassNotFoundException c) {
 			System.out.println(ERRORDEPERSISTENCIA);
 			c.printStackTrace();
-			return null ;
 		}
+		return main;
 	}
 
 	public static void main(String[] args) {
-		String rutaser=RUTASER;
-		if(args.length==1){
+		String rutaser = RUTASER;
+		if(args.length == 1){
 			try {
 				fileIn = new FileInputStream(args[0]);
 				rutaser=args[0];
-				System.out.println("se cargo parametro de configuracion por consola");
+				System.out.println("Se cargo parametro de configuracion por consola");
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				fileIn=null;
 			}
 		}
+		
 		Main main = deserializar(fileIn) ;
 		boolean persistencia=true;
-		if(main==null){
+		
+		if(main == null){
 			main=new Main(rutaser);
 			persistencia=false;
 		}
+		
 		Interfaz interfaz = new Interfaz(main);
 		if(!persistencia){
 			JOptionPane.showMessageDialog(interfaz, ERRORDEPERSISTENCIA);
@@ -211,15 +186,4 @@ public class Main implements Serializable {
 	public void setCamaras(ArrayList<Camara> camaras) {
 		this.camaras = camaras;
 	}
-
-	public String getRuta() {
-		return ruta;
-	}
-
-	public void setRuta(String ruta) {
-		this.ruta = ruta;
-	}
-
-
-
 }
