@@ -2,13 +2,9 @@ package cctv.zoneminder.client;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import java.util.Iterator;
-
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,10 +12,11 @@ import javax.swing.JPanel;
 
 import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 
+@SuppressWarnings("serial")
 public class PanelReproductor extends JPanel {
 
-
 	private static final String NOHAYCAMARAS = "No hay camaras";
+	
 	private ArrayList<EmbeddedMediaPlayerComponent> mediaCameras;
 	private EmbeddedMediaPlayerComponent mediaPlayer;
 	private VideoPersonalFrame videopersonal;
@@ -38,11 +35,11 @@ public class PanelReproductor extends JPanel {
 		this.mediaPlayer = mediaPlayer;
 	}
 
-	public void run(ArrayList<Camara> camaras){
+	public void run(ArrayList<Camara> camaras) {
 		removeAll();
-		int tamano=camaras.size();
-		System.out.println("tamaño de camaras"+ tamano);
-		if(tamano>0){
+		int tamano = camaras.size();
+		System.out.println("tamaño de camaras "+ tamano);
+		if (tamano > 0) {
 
 			int grid=(int) Math.sqrt(tamano)+1;	
 			setLayout(new GridLayout(grid,grid));
@@ -53,7 +50,7 @@ public class PanelReproductor extends JPanel {
 				mediaPlayer = new EmbeddedMediaPlayerComponent();	
 				mediaPlayer.setBounds(10,10,10,10);				
 				mediaCameras.add(mediaPlayer);
-				System.out.println("Agregando camara" + camaras.get(i).getMonitor());
+				System.out.println("Agregando camara " + camaras.get(i).getPath());
 				add(mediaPlayer);
 			}
 
@@ -61,7 +58,7 @@ public class PanelReproductor extends JPanel {
 				final EmbeddedMediaPlayerComponent camera = mediaCameras.get(j);
 				Camara c= camaras.get(j);		
 				final String ruta=c.getPath();
-				System.out.println("Reproduciendo cámara "+ c.getMonitor());
+				System.out.println("Reproduciendo cámara "+ c.getPath());
 				camera.getMediaPlayer().playMedia(ruta);
 				camera.getMediaPlayer().setEnableMouseInputHandling(true);
 				
@@ -74,25 +71,10 @@ public class PanelReproductor extends JPanel {
 				
 				camera.getVideoSurface().addMouseListener(new MouseListener() {
 
-					public void mouseReleased(MouseEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
-					public void mousePressed(MouseEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
-					public void mouseExited(MouseEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
-					public void mouseEntered(MouseEvent e) {
-						// TODO Auto-generated method stub
-
-					}
+					public void mouseReleased(MouseEvent e) {}
+					public void mousePressed(MouseEvent e) {}
+					public void mouseExited(MouseEvent e) {}
+					public void mouseEntered(MouseEvent e) {}
 
 					public void mouseClicked(MouseEvent e) {
 						if(videopersonal == null || !videopersonal.isVisible()){
@@ -114,11 +96,10 @@ public class PanelReproductor extends JPanel {
 
 	public void closeAll() {
 		try {
-			for(EmbeddedMediaPlayerComponent media:mediaCameras)
+			for(EmbeddedMediaPlayerComponent media : mediaCameras)
 				media.getMediaPlayer().stop();
 			removeAll();
-		}
-		catch(Exception e){
+		} catch(Exception e){
 			e.printStackTrace();
 		}
 	}

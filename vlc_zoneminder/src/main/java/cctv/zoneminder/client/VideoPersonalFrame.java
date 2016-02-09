@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 
 import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
 
+@SuppressWarnings("serial")
 public class VideoPersonalFrame extends JFrame{
 
 	
@@ -63,7 +64,7 @@ public class VideoPersonalFrame extends JFrame{
 	
 	public void reproducir(String media){
 		temp.getMediaPlayer().stop();
-		ruta=media;
+		ruta = media;
 		temp.getMediaPlayer().playMedia(ruta);
 	}
 
